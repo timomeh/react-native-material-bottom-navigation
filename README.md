@@ -13,6 +13,8 @@ A detailed component based on [Material Guideline's Bottom Navigation](https://m
 
 ## Install
 
+(Note: Currently not published. Not yet.)
+
 ```sh
 # via npm
 $ npm install react-native-material-bottom-navigation --save
