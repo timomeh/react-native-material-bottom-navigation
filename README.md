@@ -74,16 +74,27 @@ class MyComponent extends Component {
 |------|--------------|------|--------|
 | **`activeTab`** | Index of the preselected Tab, starting from 0. | `number` | `0` |
 | **`labelColor`** | Text Color of the Tab's Label. Can be overwritten by the Tab itself. | `string` | `rgba(0, 0, 0, 0.54)` |
+| **`activelabelColor`** | Text Color of the active Tab's Label. Can be overwritten by the Tab itself. | `string` | `labelColor` |
 | **`rippleColor`** | Color of the small Ripple Effect when the Tab will be pressed. Has opacity of `0.12`. | `string` | `black` |
 | **`backgroundColor`** | Background color of the Bottom Navigation. Can be overwritten by the Tab itself, to achive different background colors for every active Tab. | `string` | `white` |
 | **`onTabChange`** | Function to be called when a Tab was clicked an changes. Will be called with parameters `(newTabIndex, oldTabIndex) => {}`. | `function` | `noop` |
-| **`style`** | Style will be directly applied to the component. | `object` | – |
+| **`style`** | **Required.** Style will be directly applied to the component. Use this to set the height of the BottomNavigation (should be 56), to position it, to add shadow and border. You have to set this yourself! | `object` | **Required.** |
+
+**Hints:**
+
+- Elevation should be `8`
+- Height should be `56`
+- Width should be 100%
+- Follow all specs defined in the [Official Guidelines](https://material.io/guidelines/components/bottom-navigation.html#bottom-navigation-specs)
+
 
 ### Tab
 
 | Prop | Description  | Type | Defaut |
 |------|--------------|------|--------|
-| **`icon`** | **Required.** Component to render as icon. Should be have height and width of `24`. | `ReactElement<*>` | – |
-| **`label`** | **Required.** Text of the label. | `string` | – |
-| **`labelColor`** | Text Color of Label. Will use `labelColor` of BottomNavigation as default. | `string` | `rgba(0, 0, 0, 0.54)` |
-| **`barBackgroundColor`** | Background color for the whole component, if the tab is active. Will use `backgroundColor` of BottomNavigation as default. | `string` | `white` |
+| **`icon`** | **Required.** Component to render as icon. Should be have height and width of `24`. | `ReactElement<*>` | **Required.** |
+| **`activeIcon`** | Component to render as icon when the Tab is active. Should be have height and width of `24`. | `ReactElement<*>` | `icon` |
+| **`label`** | **Required.** Text of the Label. | `string` | **Required.** |
+| **`labelColor`** | Text Color of the Label. | `string` | `labelColor` of BottomNavigation |
+| **`activeLabelColor`** | Text Color of the Label when the Tab is active. | `string` | `activeLabelColor` of BottomNavigation |
+| **`barBackgroundColor`** | Background color for the whole component, if the tab is active. | `string` | `backgroundColor` of BottomNavigation |
