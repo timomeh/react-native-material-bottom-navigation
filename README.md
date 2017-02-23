@@ -6,6 +6,7 @@ A detailed component based on [Material Guideline's Bottom Navigation](https://m
 * Uses those dope Ripple Transitions between two background colors
 * Fully animated
 * Fully customizable
+* No dependencies
 * Switches automatically between Fixed Navigation (up to 3 tabs) and Shifting Navigation (3 - 5 tabs)
 
 
@@ -73,7 +74,7 @@ class MyComponent extends Component {
 |------|--------------|------|--------|
 | **`activeTab`** | Index of the preselected Tab, starting from 0. | `number` | `0` |
 | **`labelColor`** | Text Color of the Tab's Label. Can be overwritten by the Tab itself. | `string` | `rgba(0, 0, 0, 0.54)` |
-| **`rippleColor`** | Color of the small Ripple Effect when the Tab will be pressed. Can be overwritten by the Tab itself. | `string` | `black` |
+| **`rippleColor`** | Color of the small Ripple Effect when the Tab will be pressed. Has opacity of `0.12`. | `string` | `black` |
 | **`backgroundColor`** | Background color of the Bottom Navigation. Can be overwritten by the Tab itself, to achive different background colors for every active Tab. | `string` | `white` |
 | **`onTabChange`** | Function to be called when a Tab was clicked an changes. Will be called with parameters `(newTabIndex, oldTabIndex) => {}`. | `function` | `noop` |
 | **`style`** | Style will be directly applied to the component. | `object` | – |
@@ -86,4 +87,3 @@ class MyComponent extends Component {
 | **`label`** | **Required.** Text of the label. | `string` | – |
 | **`labelColor`** | Text Color of Label. Will use `labelColor` of BottomNavigation as default. | `string` | `rgba(0, 0, 0, 0.54)` |
 | **`barBackgroundColor`** | Background color for the whole component, if the tab is active. Will use `backgroundColor` of BottomNavigation as default. | `string` | `white` |
-| **`rippleColor`** | Color of the small Ripple Effect when the Tab will be pressed. Will use `rippleColor` of BottomNavigation as default. | `string` | `black` |
