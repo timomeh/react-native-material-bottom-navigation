@@ -25,8 +25,6 @@ Those are screencaptures made on a real device.
 
 ## Install
 
-(Note: Currently not published. Not yet.)
-
 ```sh
 # via npm
 $ npm install react-native-material-bottom-navigation --save
