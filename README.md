@@ -1,16 +1,27 @@
 # Material Design Bottom Navigation for react-native
 
-A detailed component based on [Material Guideline's Bottom Navigation](https://material.io/guidelines/components/bottom-navigation.html).
+A highly accurate Bottom Navigation Component for react-native, based on [Material Guidelines' Bottom Navigation](https://material.io/guidelines/components/bottom-navigation.html).
 
-* Support for iOS and Android
+* Support for iOS and Android (it's programmed only in JavaScript)
 * Uses those dope Ripple Transitions between two background colors
-* Fully animated
-* Fully customizable
+* Highly configurable
+* Follows the Guidelines as best as I can
 * No dependencies
 * Switches automatically between Fixed Navigation (up to 3 tabs) and Shifting Navigation (3 - 5 tabs)
 
 
-![with 3 tabs](.github/three-tabs.gif) ![with 4 tabs](.github/four-tabs.gif)
+## Look at it!
+
+Those are screencaptures made on a real device.
+
+**Fixed bottom navigation bar**
+
+![with 3 tabs in white](.github/white-3-tab.gif) ![with 3 tabs in color](.github/color-3-tab.gif)
+
+**Shifting bottom navigation bar**
+
+![with 4 tabs in white](.github/white-4-tab.gif) ![with 4 tabs in color](.github/color-4-tab.gif)
+
 
 ## Install
 
@@ -24,7 +35,10 @@ $ npm install react-native-material-bottom-navigation --save
 $ yarn add react-native-material-bottom-navigation
 ```
 
+
 ## But how?
+
+This is an example for a Bottom Navigation with 4 Tabs, each Tab has its own background color.
 
 ```jsx
 import React, { Component } from 'react'
@@ -68,6 +82,8 @@ class MyComponent extends Component {
 
 ## Configuration
 
+Don't skip this part. You will be happy to know about all the good stuff you can configure here.
+
 ### BottomNavigation
 
 | Prop | Description  | Type | Defaut |
@@ -98,3 +114,14 @@ class MyComponent extends Component {
 | **`labelColor`** | Text Color of the Label. | `string` | `labelColor` of BottomNavigation |
 | **`activeLabelColor`** | Text Color of the Label when the Tab is active. | `string` | `activeLabelColor` of BottomNavigation |
 | **`barBackgroundColor`** | Background color for the whole component, if the tab is active. | `string` | `backgroundColor` of BottomNavigation |
+
+
+## Roadmap
+
+- Wrapper for [react-navigation](reactnavigation.org)
+- Activity Badge for Tab
+
+
+## [LICENSE](LICENSE.md)
+
+MIT
