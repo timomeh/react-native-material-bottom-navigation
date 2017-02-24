@@ -40,6 +40,8 @@ $ yarn add react-native-material-bottom-navigation
 
 This is an example for a Bottom Navigation with 4 Tabs, each Tab has its own background color.
 
+In this example, I used [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) as Icon Components. You can use whatever Component you want.
+
 ```jsx
 import React, { Component } from 'react'
 import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation'
@@ -51,7 +53,7 @@ class MyComponent extends Component {
       <BottomNavigation
         labelColor="white"
         rippleColor="white"
-        style={styles.bottomNavigation}
+        style={{ height: 56, elevation: 8, position: 'absolute', left: 0, bottom: 0, right: 0 }}
         onTabChange={(newTabIndex) => alert(`New Tab at position ${newTabIndex}`)}
       >
         <Tab
@@ -92,9 +94,9 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`labelColor`** | Text Color of the Tab's Label. Can be overwritten by the Tab itself. | `string` | `rgba(0, 0, 0, 0.54)` |
 | **`activelabelColor`** | Text Color of the active Tab's Label. Can be overwritten by the Tab itself. | `string` | `labelColor` |
 | **`rippleColor`** | Color of the small Ripple Effect when the Tab will be pressed. Has opacity of `0.12`. | `string` | `black` |
-| **`backgroundColor`** | Background color of the Bottom Navigation. Can be overwritten by the Tab itself, to achive different background colors for every active Tab. | `string` | `white` |
-| **`onTabChange`** | Function to be called when a Tab was clicked an changes. Will be called with parameters `(newTabIndex, oldTabIndex) => {}`. | `function` | `noop` |
-| **`style`** | **Required.** Style will be directly applied to the component. Use this to set the height of the BottomNavigation (should be 56), to position it, to add shadow and border. You have to set this yourself! | `object` | **Required.** |
+| **`backgroundColor`** | Background color of the Bottom Navigation. Can be overwritten by the Tab itself, to achive different background colors for each active Tab. | `string` | `white` |
+| **`onTabChange`** | Function to be called when a Tab was clicked and changes into active state. Will be called with parameters `(newTabIndex, oldTabIndex) => {}`. | `function` | `noop` |
+| **`style`** | **Required.** Style will be directly applied to the component. Use this to set the height of the BottomNavigation (should be 56), to position it, to add shadow and border. The only pre-set rule is `overflow: hidden`. You have to set the other styles yourself! Why? Maybe your designer is a crazy person and demands a height of 80dp, or wants it to be positioned on the top. I got you. | `object` | **Required.** |
 
 **Hints:**
 
