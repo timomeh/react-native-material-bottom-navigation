@@ -109,7 +109,7 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | Prop | Description  | Type | Defaut |
 |------|--------------|------|--------|
 | **`icon`** | **Required.** Component to render as icon. Should have height and width of `24`. | `ReactElement<*>` | **Required.** |
-| **`activeIcon`** | Component to render as icon when the Tab is active. Should have height and width of `24`. | `ReactElement<*>` | `icon` |
+| **`activeIcon`** | Component to render as icon when the Tab is active. Should have height and width of `24`. Use this to change the color of the icon. | `ReactElement<*>` | `icon` |
 | **`label`** | **Required.** Text of the Label. | `string` | **Required.** |
 | **`labelColor`** | Text Color of the Label. | `string` | `labelColor` of BottomNavigation |
 | **`activeLabelColor`** | Text Color of the Label when the Tab is active. | `string` | `activeLabelColor` of BottomNavigation |
