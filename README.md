@@ -117,6 +117,11 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`barBackgroundColor`** | Background color for the whole component, if the tab is active. | `string` | `backgroundColor` of BottomNavigation |
 
 
+## Notes
+
+- **If you store the active tab in your state, don't call `this.setState({ activeTab: ... })` in `onTabChange`.**  
+  This would result in crazy animations and a temporary loop of updating the component. Simply use `this.state.activeTab = ...` in this case. This won't update the Component.
+
 ## Roadmap
 
 - Wrapper for [react-navigation](reactnavigation.org)
