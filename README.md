@@ -124,10 +124,141 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 
 ## Roadmap
 
-- [x] Wrapper for [react-navigation](reactnavigation.org)
+- [x] Wrapper for [react-navigation](https://reactnavigation.org)
 - [ ] Activity Badge for Tab (Maybe? I don't know, the Material Design Guidelines don't specify this)
 
-*Check if they are any new features announced in the [Issues](https://github.com/timomeh/react-native-material-bottom-navigation/issues)
+*Check if they are any new features announced in the [Issues](https://github.com/timomeh/react-native-material-bottom-navigation/issues).*
+
+## Usage for [react-navigation](https://reactnavigation.org)
+
+**Note: Please try to use the master-branch of react-navigation. As of writing and implementing this, I wrote this with [1ca18de](`https://github.com/react-community/react-navigation/commit/1ca18dee138905dcc2177bb5251cf8e153c2d419`).**
+
+This package includes a Component to plug into react-navigation. It is as configurable as the standalone version. To achieve this, it uses a separate configuration inside the `tabBarOptions`. You can only set those configurations inside the `TabNavigatorConfig` of `TabNavigator()`.
+
+The following example will basically explain everything.
+
+```jsx
+
+import React from 'react'
+import { NavigationComponent } from 'react-native-material-bottom-navigation'
+import { TabNavigator } from 'react-navigation'
+
+class MoviesAndTV extends React.Component {
+  static navigationOptions = {
+    tabBar: {
+      label: 'Movies & TV',
+      icon: () => (<Icon size={24} color="white" name="tv" />)
+    }
+  }
+
+  render() { ... }
+}
+
+class Music extends React.Component {
+  static navigationOptions = {
+    tabBar: {
+      label: 'Music',
+      icon: () => (<Icon size={24} color="white" name="music-note" />)
+    }
+  }
+
+  render() { ... }
+}
+
+class Newsstand extends React.Component {
+  static navigationOptions = {
+    tabBar: {
+      label: 'Newsstand',
+      icon: () => (<Icon size={24} color="white" name="Newsstand" />)
+    }
+  }
+
+  render() { ... }
+}
+
+const MyApp = TabNavigator({
+  MoviesAndTV: { screen: MoviesAndTV },
+  Music: { screen: Music },
+  Newsstand: { screen: Newsstand }
+}, {
+  tabBarComponent: NavigationComponent,
+  tabBarPosition: 'bottom',
+  tabBarOptions: {
+    bottomNavigationOptions: {
+      labelColor: 'white',
+      rippleColor: 'white',
+      tabs: {
+        MoviesAndTV: {
+          barBackgroundColor: '#37474F'
+        },
+        Music: {
+          barBackgroundColor: '#00796B'
+        },
+        Newsstand: {
+          barBackgroundColor: '#EEEEEE',
+          rippleColor: 'black', // like in the standalone version, this will override the already specified `rippleColor` for this tab
+          activeLabelColor: '#212121'
+          activeIcon: <Icon size={24} color="#212121" name="newsstand" />
+        }
+      }
+    }
+  }
+})
+```
+
+### [TabNavigatorConfig](https://reactnavigation.org/docs/navigators/tab#TabNavigatorConfig)
+
+- `tabBarComponent`: Use the `NavigationComponent` provided by `react-native-material-bottom-navigation`
+- `tabBarPosition`: Use `bottom`
+- `tabBarOptions`: react-navigation's configuration of the tab bar
+
+
+### `tabBarOptions`
+
+The only options, which will affect the Bottom Navigation, are the following:
+
+- `style`: Corresponds to the `style` prop of [`BottomNavigation`](#BottomNavigation). If no height is specified, it will use `{ height: 56 }`. This way you don't need any styling in most cases
+- `bottomNavigationOptions`: The options for the Bottom Navigation, see below
+
+
+### `bottomNavigationOptions`
+
+All options of [`BottomNavigation`](#BottomNavigation) are available. They behave like the options in the standalone version, including fallback- and default-behaviour.
+
+- `labelColor`
+- `activeLabelColor`
+- `rippleColor`
+- `backgroundColor`
+- `style`: If specified, `tabBarOptions.style` won't be used
+- `__hideWarningForUsingTooManyTabs`
+- `tabs`: Configurations for the tabs, see below
+
+*Note: `activeTab` and `onTabChange` don't have any effect, since this is handled by react-navigation.*
+
+
+### `tabs`
+
+Each tab is configurable by its key from `RouteConfigs`. *If you take a look at the example, you will see that `MoviesAndTV`, `Music` and `Newsstand` correspond to each other.*
+
+- `tab` is an object with `{ [routeKey]: tabOptions }`
+
+**`tabOptions`**
+
+All options of [`Tab`](#Tab) are available. They behave like the options in the standalone version, including fallback- and default-behaviour.
+
+- `icon`: If not specified, the icon inside `static navigationOptions.tabBar` of the scene will be used
+- `activeIcon`
+- `label`: If not specified, the label inside `static navigationOptions.tabBar` of the scene will be used
+- `labelColor`
+- `activeLabelColor`
+- `barBackgroundColor`
+
+
+### Why don't you use all the options provided by react-navigation?
+
+At the moment react-navigation changes quite often, and I don't want to look for those changes constantly. That's why everything is in its own namespace. Also the Bottom Navigation has some features which are not covered by react-navigation.
+
+I believe it's better to have 100% control over what you're programming, even if this means you need to configure a few more things in your code.
 
 
 ## [LICENSE](LICENSE.md)
