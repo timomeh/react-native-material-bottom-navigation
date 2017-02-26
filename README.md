@@ -24,10 +24,9 @@ A highly accurate Bottom Navigation Component for react-native, based on [Materi
 - [But how? (Usage)](#but-how)
 - [Configuration](#configuration)
 - [Notes](#notes)
-- [Roadmap](#roadmap)
 - [Usage for react-navigation](#usage-for-react-navigation)
+- [Roadmap](#roadmap)
 - [LICENSE](#license)
-
 
 ## Install
 
@@ -128,20 +127,13 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 - **If you store the active tab in your state, don't call `this.setState({ activeTab: ... })` in `onTabChange`.**  
   This would result in crazy animations and a temporary loop of updating the component. Simply use `this.state.activeTab = ...` in this case. This won't update the Component.
 
-## Roadmap
-
-- [x] Wrapper for [react-navigation](https://reactnavigation.org)
-- [ ] Activity Badge for Tab (Maybe? I don't know, the Material Design Guidelines don't specify this)
-
-*Check if they are any new features announced in the [Issues](https://github.com/timomeh/react-native-material-bottom-navigation/issues).*
-
 ## Usage for [react-navigation](https://reactnavigation.org)
 
 **Note: Please try to use the master-branch of react-navigation.** As of writing and implementing this, the latest version is [`1ca18de`](https://github.com/react-community/react-navigation/commit/1ca18dee138905dcc2177bb5251cf8e153c2d419). I don't use hacks or exotic functionalities from react-navigation, so I don't expect this will break in the near future.
 
-This package includes a Component to plug into react-navigation. It is as configurable as the standalone version. To achieve this, it uses a separate configuration inside the `tabBarOptions`. You can only set those configurations inside the `TabNavigatorConfig` of `TabNavigator()`.
+This package includes a Component to plug into react-navigation. It is as configurable as the standalone version. To achieve this, it uses a separate configuration inside `tabBarOptions`. You can only set those configurations for the Bottom Navigation inside the `TabNavigatorConfig` of `TabNavigator()` – not inside `static navigationOptions` or inside the `RouteConfigs`.
 
-The following example will basically explain everything.
+The following example will explain everything you need to get started.
 
 ```jsx
 
@@ -203,7 +195,7 @@ const MyApp = TabNavigator({
         Newsstand: {
           barBackgroundColor: '#EEEEEE',
           rippleColor: 'black', // like in the standalone version, this will override the already specified `rippleColor` for this tab
-          activeLabelColor: '#212121'
+          activeLabelColor: '#212121',
           activeIcon: <Icon size={24} color="#212121" name="newsstand" />
         }
       }
@@ -214,20 +206,20 @@ const MyApp = TabNavigator({
 
 ### [TabNavigatorConfig](https://reactnavigation.org/docs/navigators/tab#TabNavigatorConfig)
 
-- `tabBarComponent`: Use the `NavigationComponent` provided by `react-native-material-bottom-navigation`
-- `tabBarPosition`: Use `bottom`
-- `tabBarOptions`: react-navigation's configuration of the tab bar
+- `tabBarComponent`: Use `NavigationComponent` provided by `react-native-material-bottom-navigation`.
+- `tabBarPosition`: Use `bottom`.
+- `tabBarOptions`: react-navigation's configuration of the tab bar.
 
 
-### `tabBarOptions`
+### tabBarOptions
 
 The only options, which will affect the Bottom Navigation, are the following:
 
-- `style`: Corresponds to the `style` prop of [`BottomNavigation`](#BottomNavigation). If no height is specified, it will use `{ height: 56 }`. This way you don't need any styling in most cases
-- `bottomNavigationOptions`: The options for the Bottom Navigation, see below
+- `style`: Corresponds to the `style` prop of [`BottomNavigation`](#BottomNavigation). If no height is specified, it will use `height: 56`. This way you don't need any styling in most cases.
+- `bottomNavigationOptions`: The options for the Bottom Navigation, see below.
 
 
-### `bottomNavigationOptions`
+### bottomNavigationOptions
 
 All options of [`BottomNavigation`](#BottomNavigation) are available. They behave like the options in the standalone version, including fallback- and default-behaviour.
 
@@ -235,26 +227,26 @@ All options of [`BottomNavigation`](#BottomNavigation) are available. They behav
 - **`activeLabelColor`**
 - **`rippleColor`**
 - **`backgroundColor`**
-- **`style`**: If specified, `tabBarOptions.style` won't be used
+- **`style`**: If specified, `tabBarOptions.style` won't be used.
 - **`__hideWarningForUsingTooManyTabs`**
-- **`tabs`**: Configurations for the tabs, see below
+- **`tabs`**: Configuration for the tabs, see below.
 
 *Note: `activeTab` and `onTabChange` don't have any effect, since this is handled by react-navigation.*
 
 
-### `tabs`
+### tabs
 
-Each tab is configurable by its key from `RouteConfigs`. *If you take a look at the example, you will see that `MoviesAndTV`, `Music` and `Newsstand` correspond to each other.*
+Each tab can be configured by its key from `RouteConfigs`. *If you take a look at the example, you will see that `MoviesAndTV`, `Music` and `Newsstand` correspond to each other.*
 
 - **`tab`** is an object with `{ [routeKey]: tabOptions }`
 
-### `tabOptions`
+### tabOptions
 
 All options of [`Tab`](#Tab) are available. They behave like the options in the standalone version, including fallback- and default-behaviour.
 
-- **`icon`**: If not specified, the icon inside `static navigationOptions.tabBar` of the scene will be used
+- **`icon`**: If not specified, the icon inside `static navigationOptions.tabBar` of the scene will be used.
 - **`activeIcon`**
-- **`label`**: If not specified, the label inside `static navigationOptions.tabBar` of the scene will be used
+- **`label`**: If not specified, the label inside `static navigationOptions.tabBar` of the scene will be used.
 - **`labelColor`**
 - **`activeLabelColor`**
 - **`barBackgroundColor`**
@@ -262,10 +254,13 @@ All options of [`Tab`](#Tab) are available. They behave like the options in the 
 
 ### Why don't you use all the options provided by react-navigation?
 
-At the moment react-navigation changes quite often, and I don't want to look for those changes constantly. That's why everything is in its own namespace. Also the Bottom Navigation has some features which are not covered by react-navigation.
+At the moment react-navigation changes quite frequently, and I don't want to look for those changes constantly. That's why everything is in its own namespace. Also the Bottom Navigation has some features which are not covered by react-navigation.
 
 I believe it's better to have 100% control over what you're programming, even if this means you need to configure a few more things in your code.
 
+## Roadmap
+
+Check if they are any new features announced in the [Issues](https://github.com/timomeh/react-native-material-bottom-navigation/issues).
 
 ## [LICENSE](LICENSE.md)
 
