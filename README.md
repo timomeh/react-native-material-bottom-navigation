@@ -137,7 +137,7 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 
 ## Usage for [react-navigation](https://reactnavigation.org)
 
-**Note: Please try to use the master-branch of react-navigation. As of writing and implementing this, I wrote this with [1ca18de](`https://github.com/react-community/react-navigation/commit/1ca18dee138905dcc2177bb5251cf8e153c2d419`).**
+**Note: Please try to use the master-branch of react-navigation.** As of writing and implementing this, the latest version is [`1ca18de`](https://github.com/react-community/react-navigation/commit/1ca18dee138905dcc2177bb5251cf8e153c2d419). I don't use hacks or exotic functionalities from react-navigation, so I don't expect this will break in the near future.
 
 This package includes a Component to plug into react-navigation. It is as configurable as the standalone version. To achieve this, it uses a separate configuration inside the `tabBarOptions`. You can only set those configurations inside the `TabNavigatorConfig` of `TabNavigator()`.
 
