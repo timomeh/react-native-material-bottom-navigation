@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-bottom-navigation",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "JS Implementation of the Material Design Guidelines' Bottom Navigation for react-native",
   "main": "index.js",
   "repository": {
