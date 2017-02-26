@@ -124,8 +124,10 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 
 ## Roadmap
 
-- Wrapper for [react-navigation](reactnavigation.org)
-- Activity Badge for Tab
+- [x] Wrapper for [react-navigation](reactnavigation.org)
+- [ ] Activity Badge for Tab (Maybe? I don't know, the Material Design Guidelines don't specify this)
+
+*Check if they are any new features announced in the [Issues](https://github.com/timomeh/react-native-material-bottom-navigation/issues)
 
 
 ## [LICENSE](LICENSE.md)
