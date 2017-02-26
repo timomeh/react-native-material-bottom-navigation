@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-bottom-navigation",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "JS Implementation of the Material Design Guidelines' Bottom Navigation for react-native",
   "main": "index.js",
   "repository": {
@@ -19,7 +19,8 @@
     "bottom navigation",
     "ios",
     "android",
-    "react-component"
+    "react-component",
+    "react-navigation"
   ],
   "devDependencies": {
     "babel-jest": "18.0.0",
