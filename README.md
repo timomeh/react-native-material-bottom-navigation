@@ -8,11 +8,8 @@ A highly accurate Bottom Navigation Component for react-native, based on [Materi
 * Follows the Guidelines as best as I can
 * No dependencies
 * Switches automatically between Fixed Navigation (up to 3 tabs) and Shifting Navigation (3 - 5 tabs)
+* Support for [react-navigation](https://reactnavigation.org)
 
-
-## Look at it!
-
-Those are screencaptures made on a real device.
 
 **Fixed bottom navigation bar**
 
@@ -21,6 +18,15 @@ Those are screencaptures made on a real device.
 **Shifting bottom navigation bar**
 
 ![with 4 tabs in white](.github/white-4-tab.gif) ![with 4 tabs in color](.github/color-4-tab.gif)
+
+
+- [Install](#install)
+- [But how? (Usage)](#but-how)
+- [Configuration](#configuration)
+- [Notes](#notes)
+- [Roadmap](#roadmap)
+- [Usage for react-navigation](#usage-for-react-navigation)
+- [LICENSE](#license)
 
 
 ## Install
@@ -225,13 +231,13 @@ The only options, which will affect the Bottom Navigation, are the following:
 
 All options of [`BottomNavigation`](#BottomNavigation) are available. They behave like the options in the standalone version, including fallback- and default-behaviour.
 
-- `labelColor`
-- `activeLabelColor`
-- `rippleColor`
-- `backgroundColor`
-- `style`: If specified, `tabBarOptions.style` won't be used
-- `__hideWarningForUsingTooManyTabs`
-- `tabs`: Configurations for the tabs, see below
+- **`labelColor`**
+- **`activeLabelColor`**
+- **`rippleColor`**
+- **`backgroundColor`**
+- **`style`**: If specified, `tabBarOptions.style` won't be used
+- **`__hideWarningForUsingTooManyTabs`**
+- **`tabs`**: Configurations for the tabs, see below
 
 *Note: `activeTab` and `onTabChange` don't have any effect, since this is handled by react-navigation.*
 
@@ -240,18 +246,18 @@ All options of [`BottomNavigation`](#BottomNavigation) are available. They behav
 
 Each tab is configurable by its key from `RouteConfigs`. *If you take a look at the example, you will see that `MoviesAndTV`, `Music` and `Newsstand` correspond to each other.*
 
-- `tab` is an object with `{ [routeKey]: tabOptions }`
+- **`tab`** is an object with `{ [routeKey]: tabOptions }`
 
-**`tabOptions`**
+### `tabOptions`
 
 All options of [`Tab`](#Tab) are available. They behave like the options in the standalone version, including fallback- and default-behaviour.
 
-- `icon`: If not specified, the icon inside `static navigationOptions.tabBar` of the scene will be used
-- `activeIcon`
-- `label`: If not specified, the label inside `static navigationOptions.tabBar` of the scene will be used
-- `labelColor`
-- `activeLabelColor`
-- `barBackgroundColor`
+- **`icon`**: If not specified, the icon inside `static navigationOptions.tabBar` of the scene will be used
+- **`activeIcon`**
+- **`label`**: If not specified, the label inside `static navigationOptions.tabBar` of the scene will be used
+- **`labelColor`**
+- **`activeLabelColor`**
+- **`barBackgroundColor`**
 
 
 ### Why don't you use all the options provided by react-navigation?
