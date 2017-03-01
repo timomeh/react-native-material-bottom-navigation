@@ -194,7 +194,7 @@ const MyApp = TabNavigator({
         },
         Newsstand: {
           barBackgroundColor: '#EEEEEE',
-          rippleColor: 'black', // like in the standalone version, this will override the already specified `rippleColor` for this tab
+          labelColor: '#434343', // like in the standalone version, this will override the already specified `labelColor` for this tab
           activeLabelColor: '#212121',
           activeIcon: <Icon size={24} color="#212121" name="newsstand" />
         }
