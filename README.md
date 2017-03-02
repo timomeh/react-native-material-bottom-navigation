@@ -4,26 +4,31 @@ A highly accurate Bottom Navigation Component for react-native, based on [Materi
 
 * Support for iOS and Android (it's programmed only in JavaScript)
 * Uses those dope Ripple Transitions between two background colors
-* Highly configurable
-* Follows the Guidelines as best as I can
-* No dependencies
+* Follows the Material Design Guidelines
 * Switches automatically between Fixed Navigation (up to 3 tabs) and Shifting Navigation (3 - 5 tabs)
+* Highly configurable
+* No dependencies
 * Support for [react-navigation](https://reactnavigation.org)
 
+The Bottom navigation looks lovely. That's probably the reason why you're here. Using a Bottom Navigation is a good choice. More and more apps are switching from a Burger Menu and/or [Tabs](https://material.io/guidelines/components/tabs.html) to a Bottom Navigation, including Google Apps.
 
-**Fixed bottom navigation bar**
+**Fixed Bottom Navigation**
 
 ![with 3 tabs in white](.github/white-3-tab.gif) ![with 3 tabs in color](.github/color-3-tab.gif)
 
-**Shifting bottom navigation bar**
+**Shifting Bottom Navigation**
 
 ![with 4 tabs in white](.github/white-4-tab.gif) ![with 4 tabs in color](.github/color-4-tab.gif)
+
+**Behind the Android System Navigation Bar**
+
+![behind system navigation](.github/behind-nav-bar.gif)
 
 
 - [Install](#install)
 - [But how? (Usage)](#but-how)
 - [Configuration](#configuration)
-- [Notes](#notes)
+- [Behind the System Navigation](#behind-the-system-navigation)
 - [Usage for react-navigation](#usage-for-react-navigation)
 - [Roadmap](#roadmap)
 - [LICENSE](#license)
@@ -100,6 +105,7 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`backgroundColor`** | Background color of the Bottom Navigation. Can be overwritten by the Tab itself, to achive different background colors for each active Tab. | `string` | `white` |
 | **`onTabChange`** | Function to be called when a Tab was clicked and changes into active state. Will be called with parameters `(newTabIndex, oldTabIndex) => {}`. | `function` | `noop` |
 | **`style`** | **Required.** Style will be directly applied to the component. Use this to set the height of the BottomNavigation (should be 56), to position it, to add shadow and border. The only pre-set rule is `overflow: hidden`. You have to set the other styles yourself! Why? Maybe your designer is a crazy person and demands a height of 80dp, or wants it to be positioned on the top. I got you. | `object` | **Required.** |
+| **`innerStyle`** | All tabs are wrapped in another container. Use this to add styles to this container. The main reason why you would want to use this is to put the Navigation behind the Android System Navigation Bar. See below for an example on how to achieve this. | `object` | – |
 | **`__hideWarningForUsingTooManyTabs`** | There will be a warning if you use more than 5 Tabs. You shouldn't use more than 5 Tabs! Setting this to true will suppress this warning, but the prop name will judge you forever. | `boolean` | `false` |
 
 **Hints:**
@@ -122,14 +128,39 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`barBackgroundColor`** | Background color for the whole component, if the tab is active. | `string` | `backgroundColor` of BottomNavigation |
 
 
-## Notes
+## Behind the System Navigation
 
-- **If you store the active tab in your state, don't call `this.setState({ activeTab: ... })` in `onTabChange`.**  
-  This would result in crazy animations and a temporary loop of updating the component. Simply use `this.state.activeTab = ...` in this case. This won't update the Component.
+In the Material Design Guidelines you can see examples with the Bottom Navigation behind the System Navigation. That looks pretty sweet. In general that's pretty simple. But please read all steps carefully, especially Step 3. Really, do it.
+
+**Step 0.** Jump to Step 3 and decide, if you really want to do it. If you finished reading Step 3 and really want to do this, continue with Step 1.
+
+**Step 1.** In order to make the System Navigation translucent, you have to add this to `android/app/src/main/res/values/styles.xml`:
+
+```xml
+<!-- Customize your theme here. -->
+<item name="android:navigationBarColor">@android:color/transparent</item>
+<item name="android:windowTranslucentNavigation">true</item>
+```
+
+**Step 2.** The System Navigation has a height of 48dp. The Bottom Navigation should be 56dp tall. This makes a total height of 104. Use `innerStyle` to push the tabs above the System Navigation without pushing the whole Bottom Navigation above it.
+
+```jsx
+<BottomNavigation
+  style={{ height: 104, ... }}
+  innerStyle={{ paddingBottom: 48 }}
+>
+```
+
+**Step 3.** That was easy. You're finished. **Except, there's one catch: Not everybody has a visible System Navigation.** If someone has hardware buttons on their phone, they can turn off the System Navigation. This package doesn't check if the System Navigation is visible or not. You have to do it yourself.
+
+You may ask why there's no easier way. Why can't I as maintainer of this package check if the System Navigation is visible, but instead you need to check it and write more Code?  
+The answer is, that there's currently no native API/Component in react-native, which gets the height of the System Navigation or can set its color and translucency – and I don't want to deal with dependencies here. I also couldn't find a package which checks if the Navigation Bar is visible.  
+So, to summarize: if you really want to do this, you have to research quite a bit. Maybe there's now a package which deals with this. Maybe there isn't and you have to code something yourself. If you're successful, please tell everyone about it by announcing it in a [new Issue](https://github.com/timomeh/react-native-material-bottom-navigation/issues/new). You will be a hero.
+
 
 ## Usage for [react-navigation](https://reactnavigation.org)
 
-**Note: Please try to use the master-branch of react-navigation.** As of writing and implementing this, the latest version is [`1ca18de`](https://github.com/react-community/react-navigation/commit/1ca18dee138905dcc2177bb5251cf8e153c2d419). I don't use hacks or exotic functionalities from react-navigation, so I don't expect this will break in the near future.
+_**Note: Please try to use the latest version or even the master-branch of react-navigation.** I don't use hacks or exotic functionalities from react-navigation, so I don't expect this will break in the near future._
 
 This package includes a Component to plug into react-navigation. It is as configurable as the standalone version. To achieve this, it uses a separate configuration inside `tabBarOptions`. You can only set those configurations for the Bottom Navigation inside the `TabNavigatorConfig` of `TabNavigator()` – not inside `static navigationOptions` or inside the `RouteConfigs`.
 
@@ -228,6 +259,7 @@ All options of [`BottomNavigation`](#BottomNavigation) are available. They behav
 - **`rippleColor`**
 - **`backgroundColor`**
 - **`style`**: If specified, `tabBarOptions.style` won't be used.
+- **`innerStyle`**
 - **`__hideWarningForUsingTooManyTabs`**
 - **`tabs`**: Configuration for the tabs, see below.
 
