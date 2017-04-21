@@ -171,13 +171,12 @@ The following example will explain everything you need to get started.
 import React from 'react'
 import { NavigationComponent } from 'react-native-material-bottom-navigation'
 import { TabNavigator } from 'react-navigation'
+import { AppRegistry } from 'react-native';
 
 class MoviesAndTV extends React.Component {
   static navigationOptions = {
-    tabBar: {
-      label: 'Movies & TV',
-      icon: () => (<Icon size={24} color="white" name="tv" />)
-    }
+    tabBarLabel: 'Movies & TV',
+    tabBarIcon: () => (<Icon size={24} color="white" name="tv" />)
   }
 
   render() { ... }
@@ -185,10 +184,8 @@ class MoviesAndTV extends React.Component {
 
 class Music extends React.Component {
   static navigationOptions = {
-    tabBar: {
-      label: 'Music',
-      icon: () => (<Icon size={24} color="white" name="music-note" />)
-    }
+    tabBarLabel: 'Music',
+    tabBarIcon: () => (<Icon size={24} color="white" name="music-note" />)
   }
 
   render() { ... }
@@ -196,10 +193,8 @@ class Music extends React.Component {
 
 class Newsstand extends React.Component {
   static navigationOptions = {
-    tabBar: {
-      label: 'Newsstand',
-      icon: () => (<Icon size={24} color="white" name="Newsstand" />)
-    }
+    tabBarLabel: 'Newsstand',
+    tabBarIcon: () => (<Icon size={24} color="white" name="Newsstand" />)
   }
 
   render() { ... }
@@ -233,6 +228,8 @@ const MyApp = TabNavigator({
     }
   }
 })
+
+AppRegistry.registerComponent('MyApp', () => MyApp);
 ```
 
 ### [TabNavigatorConfig](https://reactnavigation.org/docs/navigators/tab#TabNavigatorConfig)
