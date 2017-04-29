@@ -108,7 +108,6 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`style`** | **Required.** Style will be directly applied to the component. Use this to set the height of the BottomNavigation (should be 56), to position it, to add shadow and border. The only pre-set rule is `overflow: hidden`. | `object` | **Required.** |
 | **`innerStyle`** | All tabs are wrapped in another container. Use this to add styles to this container. The main reason why you would want to use this is to put the Navigation behind the Android System Navigation Bar. See below for an example on how to achieve this. | `object` | – |
 | **`shifting`** | Turn manually on/off shifting mode. | `boolean` | `true` if > 3 Tabs, otherwise `false` |
-| **`__hideWarningForUsingTooManyTabs`** | There will be a warning if you use more than 5 Tabs. You shouldn't use more than 5 Tabs! Setting this to true will suppress this warning, but the prop name will judge you forever. | `boolean` | `false` |
 
 **Hints:**
 
