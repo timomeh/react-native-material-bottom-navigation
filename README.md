@@ -6,7 +6,6 @@ A highly accurate Bottom Navigation Component for react-native, based on [Materi
 * Uses those dope Ripple Transitions between two background colors
 * Follows the Material Design Guidelines
 * Switches automatically between Fixed Navigation (up to 3 tabs) and Shifting Navigation (3 - 5 tabs)
-* Highly configurable
 * No dependencies
 * Support for [react-navigation](https://reactnavigation.org)
 
@@ -104,8 +103,9 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`rippleColor`** | Color of the small Ripple Effect when the Tab will be pressed. Has opacity of `0.12`. | `string` | `black` |
 | **`backgroundColor`** | Background color of the Bottom Navigation. Can be overwritten by the Tab itself, to achive different background colors for each active Tab. | `string` | `white` |
 | **`onTabChange`** | Function to be called when a Tab was clicked and changes into active state. Will be called with parameters `(newTabIndex, oldTabIndex) => {}`. | `function` | `noop` |
-| **`style`** | **Required.** Style will be directly applied to the component. Use this to set the height of the BottomNavigation (should be 56), to position it, to add shadow and border. The only pre-set rule is `overflow: hidden`. You have to set the other styles yourself! Why? Maybe your designer is a crazy person and demands a height of 80dp, or wants it to be positioned on the top. I got you. | `object` | **Required.** |
+| **`style`** | **Required.** Style will be directly applied to the component. Use this to set the height of the BottomNavigation (should be 56), to position it, to add shadow and border. The only pre-set rule is `overflow: hidden`. | `object` | **Required.** |
 | **`innerStyle`** | All tabs are wrapped in another container. Use this to add styles to this container. The main reason why you would want to use this is to put the Navigation behind the Android System Navigation Bar. See below for an example on how to achieve this. | `object` | – |
+| **`shifting`** | Turn manually on/off shifting mode. | `boolean` | `true` if > 3 Tabs, otherwise `false` |
 | **`__hideWarningForUsingTooManyTabs`** | There will be a warning if you use more than 5 Tabs. You shouldn't use more than 5 Tabs! Setting this to true will suppress this warning, but the prop name will judge you forever. | `boolean` | `false` |
 
 **Hints:**
