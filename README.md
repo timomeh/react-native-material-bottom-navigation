@@ -93,6 +93,8 @@ class MyComponent extends Component {
 
 Don't skip this part. You will be happy to know about all the good stuff you can configure here.
 
+**Note:** If you are searching for more customization options, like label styles for fonts/positioning/..., they are *intentionally* not supported. More and more customizations would be actively against the Material Design Guidelines, and I want to encourage you to follow the Guidelines.
+
 ### BottomNavigation
 
 | Prop | Description  | Type | Defaut |
@@ -159,8 +161,6 @@ So, to summarize: if you really want to do this, you have to research quite a bi
 
 
 ## Usage for [react-navigation](https://reactnavigation.org)
-
-_**Note: Please try to use the latest version or even the master-branch of react-navigation.** I don't use hacks or exotic functionalities from react-navigation, so I don't expect this will break in the near future._
 
 This package includes a Component to plug into react-navigation. It is as configurable as the standalone version. To achieve this, it uses a separate configuration inside `tabBarOptions`. You can only set those configurations for the Bottom Navigation inside the `TabNavigatorConfig` of `TabNavigator()` – not inside `static navigationOptions` or inside the `RouteConfigs`.
 
