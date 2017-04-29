@@ -256,7 +256,7 @@ All options of [`BottomNavigation`](#BottomNavigation) are available. They behav
 - **`backgroundColor`**
 - **`style`**: If specified, `tabBarOptions.style` won't be used.
 - **`innerStyle`**
-- **`__hideWarningForUsingTooManyTabs`**
+- **`shifting`**
 - **`tabs`**: Configuration for the tabs, see below.
 
 *Note: `activeTab` and `onTabChange` don't have any effect, since this is handled by react-navigation.*
