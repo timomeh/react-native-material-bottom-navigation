@@ -21,7 +21,7 @@ The Bottom navigation looks lovely. That's probably the reason why you're here. 
 
 **Behind the Android System Navigation Bar**
 
-![behind system navigation](.github/behind-nav-bar.gif)
+![behind navigation bar](.github/behind-nav-bar.gif)
 
 
 - [Install](#install)
@@ -159,7 +159,7 @@ However, if you know what you're doing, you only need to adjust a few things:
 
 ## Usage for [react-navigation](https://reactnavigation.org)
 
-This package includes a Component to plug into react-navigation. It is as configurable as the standalone version. To achieve this, it uses a separate configuration inside `tabBarOptions`. You can only set those configurations for the Bottom Navigation inside the `TabNavigatorConfig` of `TabNavigator()` – not inside `static navigationOptions` or inside the `RouteConfigs`.
+This package includes a Component to plug into react-navigation. It is as configurable as the standalone version. To achieve this, it uses a separate configuration inside `tabBarOptions`. You can only set those configurations for the Bottom Navigation inside the `TabNavigatorConfig` of `TabNavigator()` – **not inside `static navigationOptions` or inside the `RouteConfigs`**.
 
 The following example will explain everything you need to get started.
 
@@ -226,7 +226,7 @@ const MyApp = TabNavigator({
   }
 })
 
-AppRegistry.registerComponent('MyApp', () => MyApp);
+AppRegistry.registerComponent('MyApp', () => MyApp)
 ```
 
 ### [TabNavigatorConfig](https://reactnavigation.org/docs/navigators/tab#TabNavigatorConfig)
@@ -280,9 +280,7 @@ All options of [`Tab`](#Tab) are available. They behave like the options in the 
 
 ### Why don't you use all the options provided by react-navigation?
 
-At the moment react-navigation changes quite frequently, and I don't want to look for those changes constantly. That's why everything is in its own namespace. Also the Bottom Navigation has some features which are not covered by react-navigation.
-
-I believe it's better to have 100% control over what you're programming, even if this means you need to configure a few more things in your code.
+At the time I developed this, react-navigation was in an early beta stage. It wasn't easy to get those options and add new options. I could only access the configs inside `tabBarOptions`, hence everything is stored there.
 
 ## Roadmap
 
