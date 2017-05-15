@@ -1,27 +1,16 @@
 import React, { Component } from 'react'
 import { View, StyleSheet } from 'react-native'
-import BottomNavigation, { Tab } from '../'
+import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 
-export default class ColoredBottomNavigation extends Component {
-  constructor(props) {
-    super(props)
-    this._handleTabChange = this._handleTabChange.bind(this)
-  }
-
-  _handleTabChange(newTabIndex, oldTabIndex) {
-    console.log(`New active Tab is at position ${newTabIndex}`)
-    console.log(`Old, now inactive Tab is at position ${oldTabIndex}`)
-  }
-
+export default class SimpleBottomNavigation extends Component {
   render() {
     <View style={{ flex: 1 }}>
       <BottomNavigation
         labelColor="white"
         rippleColor="white"
         style={styles.bottomNavigation}
-        onTabChange={this._handleTabChange}
       >
         <Tab
           barBackgroundColor="#37474F"
