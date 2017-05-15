@@ -27,7 +27,7 @@ The Bottom navigation looks lovely. That's probably the reason why you're here. 
 - [Install](#install)
 - [But how? (Usage)](#but-how)
 - [Configuration](#configuration)
-- [Behind the System Navigation](#behind-the-system-navigation)
+- [Behind the Navigation Bar](#behind-the-navigation-bar)
 - [Usage for react-navigation](#usage-for-react-navigation)
 - [Roadmap](#roadmap)
 - [LICENSE](#license)
@@ -129,11 +129,13 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`barBackgroundColor`** | Background color for the whole component, if the tab is active. | `string` | `backgroundColor` of BottomNavigation |
 
 
-## Behind the System Navigation
+## Behind the Navigation Bar
 
-In the Material Design Guidelines you can see examples with the Bottom Navigation behind the System Navigation. That looks pretty sweet. In general that's pretty simple. But please read all steps carefully, especially Step 3. Really, do it.
+In the Material Design Guidelines you can see examples with the Bottom Navigation behind the Software Navigation Bar. That looks pretty sweet. In theory, that's pretty simple. In practice there's a problem: Not every device has a visible Navigation Bar. If someone has hardware buttons on his phone, the Navigation Bar is usually hidden. As of now, we can't simply detect if it's visible. If you don't detect it and just add the following code, the BottomNavigation will have a huge padding-bottom on devices without a Navigation Bar.
 
-**Step 0.** Jump to Step 3 and decide, if you really want to do it. If you finished reading Step 3 and really want to do this, continue with Step 1.
+See [Issue #28](https://github.com/timomeh/react-native-material-bottom-navigation/issues/28) for more informations with an initial proposal by @keeleycarrigan.
+
+However, if you know what you're doing, you only need to adjust a few things:
 
 **Step 1.** In order to make the System Navigation translucent, you have to add this to `android/app/src/main/res/values/styles.xml`:
 
@@ -152,11 +154,7 @@ In the Material Design Guidelines you can see examples with the Bottom Navigatio
 >
 ```
 
-**Step 3.** That was easy. You're finished. **Except, there's one catch: Not everybody has a visible System Navigation.** If someone has hardware buttons on their phone, they can turn off the System Navigation. This package doesn't check if the System Navigation is visible or not. You have to do it yourself.
-
-You may ask why there's no easier way. Why can't I as maintainer of this package check if the System Navigation is visible, but instead you need to check it and write more Code?  
-The answer is, that there's currently no native API/Component in react-native, which gets the height of the System Navigation or can set its color and translucency – and I don't want to deal with dependencies here. I also couldn't find a package which checks if the Navigation Bar is visible.  
-So, to summarize: if you really want to do this, you have to research quite a bit. Maybe there's now a package which deals with this. Maybe there isn't and you have to code something yourself. If you're successful, please tell everyone about it by announcing it in a [new Issue](https://github.com/timomeh/react-native-material-bottom-navigation/issues/new). You will be a hero.
+**Step 3.** You're done!
 
 
 ## Usage for [react-navigation](https://reactnavigation.org)
