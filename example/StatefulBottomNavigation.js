@@ -3,15 +3,31 @@ import { View, StyleSheet } from 'react-native'
 import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
+/**
+ * In this Example, the active Tab will be stored in the state.
+ */
 
-export default class SimpleBottomNavigation extends Component {
+export default class StatefulBottomNavigation extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = { activeTab: 0 }
+    this.handleTabChange = this.handleTabChange.bind(this)
+  }
+
+  handleTabChange(newTabIndex, oldTabIndex) {
+    this.setState({ activeTab: newTabIndex })
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
         <BottomNavigation
+          activeTab={this.state.activeTab}
           labelColor="white"
           rippleColor="white"
           style={styles.bottomNavigation}
+          onTabChange={this.handleTabChange}
         >
           <Tab
             barBackgroundColor="#37474F"
