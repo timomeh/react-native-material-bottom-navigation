@@ -97,14 +97,14 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 
 ### BottomNavigation
 
-| Prop | Description  | Type | Defaut |
+| Prop | Description  | Type | Default |
 |------|--------------|------|--------|
 | **`activeTab`** | Index of the preselected Tab, starting from 0. | `number` | `0` |
 | **`labelColor`** | Text Color of the Tab's Label. Can be overwritten by the Tab itself. | `string` | `rgba(0, 0, 0, 0.54)` |
 | **`activeLabelColor`** | Text Color of the active Tab's Label. Can be overwritten by the Tab itself. | `string` | `labelColor` |
 | **`rippleColor`** | Color of the small Ripple Effect when the Tab will be pressed. Has opacity of `0.12`. | `string` | `black` |
-| **`backgroundColor`** | Background color of the Bottom Navigation. Can be overwritten by the Tab itself, to achive different background colors for each active Tab. | `string` | `white` |
-| **`onTabChange`** | Function to be called when a Tab was clicked and changes into active state. Will be called with parameters `(newTabIndex, oldTabIndex) => {}`. | `function` | `noop` |
+| **`backgroundColor`** | Background color of the Bottom Navigation. Can be overwritten by the Tab itself, to achieve different background colors for each active Tab. | `string` | `white` |
+| **`onTabChange`** | Function to be called when a Tab was pressed and changes into active state. Will be called with parameters `(newTabIndex, oldTabIndex) => {}`. | `function` | `noop` |
 | **`style`** | **Required.** Style will be directly applied to the component. Use this to set the height of the BottomNavigation (should be 56), to position it, to add shadow and border. The only pre-set rule is `overflow: hidden`. | `object` | **Required.** |
 | **`innerStyle`** | All tabs are wrapped in another container. Use this to add styles to this container. The main reason why you would want to use this is to put the Navigation behind the Android System Navigation Bar. See below for an example on how to achieve this. | `object` | – |
 | **`shifting`** | Turn manually on/off shifting mode. | `boolean` | `true` if > 3 Tabs, otherwise `false` |
@@ -119,7 +119,7 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 
 ### Tab
 
-| Prop | Description  | Type | Defaut |
+| Prop | Description  | Type | Default |
 |------|--------------|------|--------|
 | **`icon`** | **Required.** Component to render as icon. Should have height and width of `24`. | `ReactElement<*>` | **Required.** |
 | **`activeIcon`** | Component to render as icon when the Tab is active. Should have height and width of `24`. Use this to change the color of the icon. | `ReactElement<*>` | `icon` |
@@ -127,6 +127,7 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`labelColor`** | Text Color of the Label. | `string` | `labelColor` of BottomNavigation |
 | **`activeLabelColor`** | Text Color of the Label when the Tab is active. | `string` | `activeLabelColor` of BottomNavigation |
 | **`barBackgroundColor`** | Background color for the whole component, if the tab is active. | `string` | `backgroundColor` of BottomNavigation |
+| **`onPress`** | Function to be called when the Tab was pressed. **When you use this, the pressed tab won't be active automatically. You need to set it to active by updating `BottomNavigation.activeTab`.** This function will be called with the parameter `(newTabIndex) => {}` | `function` | – |
 
 
 ## Behind the Navigation Bar
