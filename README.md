@@ -7,6 +7,7 @@ A highly accurate Bottom Navigation Component for react-native, based on [Materi
 * Follows the Material Design Guidelines
 * Switches automatically between Fixed Navigation (up to 3 tabs) and Shifting Navigation (3 - 5 tabs)
 * No dependencies
+* Includes a Badge
 * Support for [react-navigation](https://reactnavigation.org)
 
 The Bottom navigation looks lovely. That's probably the reason why you're here. Using a Bottom Navigation is a good choice. More and more apps are switching from a Burger Menu and/or [Tabs](https://material.io/guidelines/components/tabs.html) to a Bottom Navigation, including Google Apps.
