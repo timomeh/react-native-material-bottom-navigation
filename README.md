@@ -7,6 +7,7 @@ A highly accurate Bottom Navigation Component for react-native, based on [Materi
 * Follows the Material Design Guidelines
 * Switches automatically between Fixed Navigation (up to 3 tabs) and Shifting Navigation (3 - 5 tabs)
 * No dependencies
+* Includes a Badge
 * Support for [react-navigation](https://reactnavigation.org)
 
 The Bottom navigation looks lovely. That's probably the reason why you're here. Using a Bottom Navigation is a good choice. More and more apps are switching from a Burger Menu and/or [Tabs](https://material.io/guidelines/components/tabs.html) to a Bottom Navigation, including Google Apps.
@@ -130,7 +131,7 @@ Don't skip this part. You will be happy to know about all the good stuff you can
 | **`onPress`** | Function to be called when the Tab was pressed. **When you use this, the pressed tab won't be active automatically. You need to set it to active by updating `BottomNavigation.activeTab`.** This function will be called with the parameter `(newTabIndex) => {}` | `function` | – |
 | **`badgeText`** | Text for the tab's badge. **The badge will be hidden if no badgeText is passed. isBadgeVisible can be used to override this**. | `string` | - |
 | **`badgeSize`** | Size of the badge. Will be used to calculate the height, width, and border radius (height: size, width: size, borderRadius: size/2)  | `number` | 20 |
-| **`badgeStyle`** | Style for the badge. `badgeStyle.container` will be used to determine the badge's container style, and `badgeStyle.text` will be used to determine the badge's text style  | `object` | `{ container: { position: "relative", width: 20, height: 20, borderRadius: 20 / 2, alignItems: "center", justifyContent: "center", backgroundColor: "#F50057", zIndex: 9999, bottom: 5, right: 10 }, text: { color: "#fff", fontWeight: "500", fontSize: 12 } }` |
+| **`badgeStyle`** | Style for the badge. `badgeStyle.container` will be used to determine the badge's container style, and `badgeStyle.text` will be used to determine the badge's text style  | `object` | `{ container: { position: "absolute", width: 20, height: 20, borderRadius: 20 / 2, alignItems: "center", justifyContent: "center", backgroundColor: "#F50057", zIndex: 9999, bottom: 10 }, text: { color: "#fff", fontWeight: "500", fontSize: 12 } }` |
 | **`isBadgeVisible`** | Determines if the badge is visible or not  | `boolean` | - |
 
 ## Behind the Navigation Bar
