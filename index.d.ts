@@ -19,7 +19,7 @@ declare module 'react-native-material-bottom-navigation' {
         labelColor?: string;
         activeLabelColor?: string;
         barBackgroundColor?: string;
-        onPress: (newTabIndex?: number) => void;
+        onPress?: (newTabIndex?: number) => void;
         badgeText?: string;
         badgeSize?: number;
         badgeStyle?: ViewStyle;
@@ -28,4 +28,5 @@ declare module 'react-native-material-bottom-navigation' {
 
     export class BottomNavigation extends React.Component<BottomNavigationProps> { }
     export class Tab extends React.Component<TabProps> { }
+    export default BottomNavigation;
 }
