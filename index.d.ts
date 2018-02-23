@@ -15,12 +15,12 @@ declare module 'react-native-material-bottom-navigation' {
     export interface TabProps {
         icon?: JSX.Element;
         activeIcon?: JSX.Element;
-        label?: JSX.Element;
+        label?: JSX.Element | string;
         labelColor?: string;
         activeLabelColor?: string;
         barBackgroundColor?: string;
         onPress?: (newTabIndex?: number) => void;
-        badgeText?: string;
+        badgeText?: JSX.Element | string;
         badgeSize?: number;
         badgeStyle?: ViewStyle;
         isBadgeVisible?: boolean;
