@@ -23,8 +23,8 @@ declare module 'react-native-material-bottom-navigation' {
         badgeText?: JSX.Element | string;
         badgeSize?: number;
         badgeStyle?: {
-            container: ViewStyle,
-            text: TextStyle
+            container?: ViewStyle,
+            text?: TextStyle
         };
         isBadgeVisible?: boolean;
     }
