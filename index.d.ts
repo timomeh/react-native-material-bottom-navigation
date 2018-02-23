@@ -1,4 +1,4 @@
-import { ViewStyle } from 'react-native';
+import { ViewStyle, TextStyle } from 'react-native';
 declare module 'react-native-material-bottom-navigation' {
     export interface BottomNavigationProps {
         activeTab?: number;
@@ -22,7 +22,10 @@ declare module 'react-native-material-bottom-navigation' {
         onPress?: (newTabIndex?: number) => void;
         badgeText?: JSX.Element | string;
         badgeSize?: number;
-        badgeStyle?: ViewStyle;
+        badgeStyle?: {
+            container: ViewStyle,
+            text: TextStyle
+        };
         isBadgeVisible?: boolean;
     }
 
