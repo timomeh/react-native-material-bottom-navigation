@@ -22,6 +22,7 @@
     "react-component",
     "react-navigation"
   ],
+  "typings": "index.d.ts",
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
