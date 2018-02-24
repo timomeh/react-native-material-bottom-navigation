@@ -125,7 +125,7 @@ You can find more examples in the [`examples/`](examples) directory.
 * `rippleColor` String. Default: `black`  
   Color of the small Ripple Effect when the Tab will be pressed. Has opacity of `0.12`.
 
-* `shifting` Boolean. Default: `true` when >= 3 Tabs, otherwise `false`  
+* `shifting` Boolean. Default: `true` when >= 4 Tabs, otherwise `false`  
   Turn shifting manually on/off.
 
 ### `Tab`
