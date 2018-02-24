@@ -1,6 +1,6 @@
 # Material Design Bottom Navigation for react-native
 
-A highly accurate Material Design Bottom Navigation Component for react-native, following the [Material Design Guidelines](https://material.io/guidelines/components/bottom-navigation.html).
+A highly accurate JS Implementation of the Material Design Bottom Navigation Component for react-native, following the [Material Design Guidelines](https://material.io/guidelines/components/bottom-navigation.html).
 
 * Supports iOS, Android and react-native-web (no native dependencies, only JS)
 * Uses those dope Ripple Transitions between two background colors

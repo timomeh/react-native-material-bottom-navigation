@@ -1,17 +1,19 @@
 {
   "name": "react-native-material-bottom-navigation",
   "version": "0.8.2",
-  "description": "JS Implementation of the Material Design Guidelines' Bottom Navigation for react-native",
+  "description": "A highly accurate JS Implementation of the Material Design Bottom Navigation Component for react-native",
   "scripts": {
     "lint": "eslint ."
   },
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timomeh/react-native-material-bottom-navigation.git"
+    "url":
+      "git+https://github.com/timomeh/react-native-material-bottom-navigation.git"
   },
   "bugs": {
-    "url": "https://github.com/timomeh/react-native-material-bottom-navigation/issues"
+    "url":
+      "https://github.com/timomeh/react-native-material-bottom-navigation/issues"
   },
   "author": "Timo Mämecke <maemecketimo@gmail.com>",
   "license": "MIT",
