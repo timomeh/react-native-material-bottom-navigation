@@ -2,6 +2,9 @@
   "name": "react-native-material-bottom-navigation",
   "version": "0.8.2",
   "description": "JS Implementation of the Material Design Guidelines' Bottom Navigation for react-native",
+  "scripts": {
+    "lint": "eslint ."
+  },
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -24,9 +27,16 @@
   ],
   "types": "./index.d.ts",
   "devDependencies": {
+    "babel-eslint": "^8.2.2",
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "eslint": "^4.18.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react-native": "^3.2.1",
     "jest": "18.1.0",
+    "prettier": "^1.10.2",
     "react-test-renderer": "~15.4.0"
   },
   "jest": {
