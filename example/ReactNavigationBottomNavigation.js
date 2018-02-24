@@ -4,19 +4,22 @@ import { NavigationComponent } from 'react-native-material-bottom-navigation'
 import { TabNavigator } from 'react-navigation'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-
 /**
  * Screen for first tab.
  * You usually will have this in a separate file.
  */
 class MoviesAndTV extends Component {
   static navigationOptions = {
-    tabBarLabel: "Movies & TV",
+    tabBarLabel: 'Movies & TV',
     tabBarIcon: () => <Icon size={24} name="ondemand-video" color="white" />
   }
 
   render() {
-    return <View><Text>Movies & TV</Text></View>
+    return (
+      <View>
+        <Text>Movies & TV</Text>
+      </View>
+    )
   }
 }
 
@@ -26,12 +29,16 @@ class MoviesAndTV extends Component {
  */
 class Music extends Component {
   static navigationOptions = {
-    tabBarLabel: "Music",
+    tabBarLabel: 'Music',
     tabBarIcon: () => <Icon size={24} name="music-note" color="white" />
   }
 
   render() {
-    return <View><Text>Music</Text></View>
+    return (
+      <View>
+        <Text>Music</Text>
+      </View>
+    )
   }
 }
 
@@ -41,42 +48,49 @@ class Music extends Component {
  */
 class Books extends Component {
   static navigationOptions = {
-    tabBarLabel: "Books",
+    tabBarLabel: 'Books',
     tabBarIcon: () => <Icon size={24} name="book" color="white" />
   }
 
   render() {
-    return <View><Text>Books</Text></View>
+    return (
+      <View>
+        <Text>Books</Text>
+      </View>
+    )
   }
 }
 
 /**
  * react-navigation's TabNavigator.
  */
-const MyApp = TabNavigator({
-  MoviesAndTV: { screen: MoviesAndTV },
-  Music: { screen: Music },
-  Books: { screen: Books }
-}, {
-  tabBarComponent: NavigationComponent,
-  tabBarPosition: 'bottom',
-  tabBarOptions: {
-    bottomNavigationOptions: {
-      labelColor: 'white',
-      rippleColor: 'white',
-      tabs: {
-        MoviesAndTV: {
-          barBackgroundColor: '#37474F'
-        },
-        Music: {
-          barBackgroundColor: '#00796B'
-        },
-        Books: {
-          barBackgroundColor: '#5D4037'
+const MyApp = TabNavigator(
+  {
+    MoviesAndTV: { screen: MoviesAndTV },
+    Music: { screen: Music },
+    Books: { screen: Books }
+  },
+  {
+    tabBarComponent: NavigationComponent,
+    tabBarPosition: 'bottom',
+    tabBarOptions: {
+      bottomNavigationOptions: {
+        labelColor: 'white',
+        rippleColor: 'white',
+        tabs: {
+          MoviesAndTV: {
+            barBackgroundColor: '#37474F'
+          },
+          Music: {
+            barBackgroundColor: '#00796B'
+          },
+          Books: {
+            barBackgroundColor: '#5D4037'
+          }
         }
       }
     }
   }
-})
+)
 
 AppRegistry.registerComponent('MyApp', () => MyApp)

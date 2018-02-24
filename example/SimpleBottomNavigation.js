@@ -3,7 +3,6 @@ import { View, StyleSheet } from 'react-native'
 import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-
 export default class SimpleBottomNavigation extends Component {
   render() {
     return (
