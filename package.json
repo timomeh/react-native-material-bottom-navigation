@@ -8,12 +8,10 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/timomeh/react-native-material-bottom-navigation.git"
+    "url": "git+https://github.com/timomeh/react-native-material-bottom-navigation.git"
   },
   "bugs": {
-    "url":
-      "https://github.com/timomeh/react-native-material-bottom-navigation/issues"
+    "url": "https://github.com/timomeh/react-native-material-bottom-navigation/issues"
   },
   "author": "Timo Mämecke <maemecketimo@gmail.com>",
   "license": "MIT",
