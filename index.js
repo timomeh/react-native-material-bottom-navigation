@@ -1,9 +1,7 @@
-// Hi!
-//
-// Timo Mämecke, 2017, @timomeh
-// https://twitter.com/timomeh
-// https://github.com/timomeh
-//
+/**
+ * Copyright (c) 2017-present, Timo Mämecke.
+ * This project is released under the MIT License.
+ */
 
 export { default } from './lib/BottomNavigation'
 export { default as Tab } from './lib/Tab'
