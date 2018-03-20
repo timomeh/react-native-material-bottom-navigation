@@ -5,3 +5,4 @@
 
 export { default } from './lib/BottomNavigation'
 export { default as IconTab } from './lib/IconTab'
+export { default as FullTab } from './lib/FullTab'
