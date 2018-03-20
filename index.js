@@ -4,4 +4,4 @@
  */
 
 export { default } from './lib/BottomNavigation'
-export { default as Tab } from './lib/Tab'
+export { default as IconTab } from './lib/IconTab'
