@@ -2,10 +2,16 @@
   "name": "react-native-material-bottom-navigation",
   "version": "0.8.2",
   "description": "A highly accurate JS Implementation of the Material Design Bottom Navigation Component for react-native",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "flow-typed/",
+    "lib/"
+  ],
   "scripts": {
     "lint": "eslint ."
   },
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/timomeh/react-native-material-bottom-navigation.git"
@@ -15,17 +21,13 @@
   },
   "author": "Timo Mämecke <maemecketimo@gmail.com>",
   "license": "MIT",
-  "keywords": [
-    "react-native",
-    "material",
-    "bottomnavigation",
-    "bottom navigation",
-    "ios",
-    "android",
-    "react-component",
-    "react-navigation"
-  ],
-  "types": "./index.d.ts",
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "babel-jest": "18.0.0",
@@ -39,7 +41,18 @@
     "prettier": "^1.10.2",
     "react-test-renderer": "~15.4.0"
   },
+  "types": "./index.d.ts",
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "keywords": [
+    "react-native",
+    "material",
+    "bottomnavigation",
+    "bottom navigation",
+    "ios",
+    "android",
+    "react-component",
+    "react-navigation"
+  ]
 }
