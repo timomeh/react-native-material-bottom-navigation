@@ -4,6 +4,7 @@ import { mount } from 'enzyme'
 
 import BackgroundDecorator from '../lib/BackgroundDecorator'
 import PressFeedback from '../lib/PressFeedback'
+import TabList from '../lib/TabList'
 import BottomNavigation from '../lib/BottomNavigation'
 
 const MockTab = () => <View />
@@ -20,6 +21,14 @@ describe('BottomNavigation', () => {
   }
 
   beforeEach(() => {
+    mountedBN = null
+    props = {
+      style: { position: 'absolute' },
+      tabs: [{ key: 'up' }, { key: 'town' }, { key: 'funk' }],
+      onTabPress: jest.fn(),
+      renderTab: jest.fn(() => <MockTab />)
+    }
+
     // prevent output of warnings because of native RN Components
     console.error = () => {}
   })
@@ -28,57 +37,53 @@ describe('BottomNavigation', () => {
     console.error = consoleError
   })
 
-  describe('uncontrolled with three mock tabs', () => {
-    beforeEach(() => {
-      mountedBN = null
-      props = {
-        tabs: [
-          { key: 1, data: 'up' },
-          { key: 2, data: 'town' },
-          { key: 3, data: 'funk' }
-        ],
-        onTabPress: jest.fn(),
-        renderTab: jest.fn(() => <MockTab />)
-      }
-    })
+  it('renders BackgroundDecorator', () => {
+    expect(bottomNavigation().find(BackgroundDecorator)).toHaveLength(1)
+  })
 
-    it('renders BackgroundDecorator', () => {
-      expect(bottomNavigation().find(BackgroundDecorator)).toHaveLength(1)
-    })
+  it('renders PressFeedback', () => {
+    expect(bottomNavigation().find(PressFeedback)).toHaveLength(1)
+  })
 
-    it('renders PressFeedback', () => {
-      expect(bottomNavigation().find(PressFeedback)).toHaveLength(1)
-    })
+  it('renders TabList', () => {
+    expect(bottomNavigation().find(TabList)).toHaveLength(1)
+  })
 
-    it('renders all tabs', () => {
-      expect(bottomNavigation().find(MockTab)).toHaveLength(3)
-    })
-
-    it('passes touchable props to tab component', () => {
-      const tabProps = bottomNavigation()
-        .find(MockTab)
+  it('applies styles from props', () => {
+    expect(
+      bottomNavigation()
+        .find(View)
         .first()
-        .props()
+        .props().style
+    ).toContain(props.style)
+  })
 
-      // Just test a few. If they are passed, we can be pretty sure all
-      // are passed.
-      expect(tabProps).toHaveProperty('onResponderGrant')
-      expect(tabProps).toHaveProperty('onResponderMove')
-      expect(tabProps).toHaveProperty('onResponderRelease')
-    })
+  it('passes correct props to TabList', () => {
+    const listProps = bottomNavigation()
+      .find(TabList)
+      .props()
+    const bg = bottomNavigation()
+      .find(BackgroundDecorator)
+      .instance()
+    const press = bottomNavigation()
+      .find(PressFeedback)
+      .instance()
 
-    it('calls renderTab with correct amount of times', () => {
-      bottomNavigation()
-      expect(props.renderTab).toHaveBeenCalledTimes(3)
-    })
+    // passed from root
+    expect(listProps).toHaveProperty('tabs', props.tabs)
+    expect(listProps).toHaveProperty('onTabPress', props.onTabPress)
+    expect(listProps).toHaveProperty('renderTab', props.renderTab)
 
-    it('calls renderTab with correct arguments', () => {
-      bottomNavigation()
-      expect(props.renderTab.mock.calls).toEqual([
-        [{ isActive: true, tab: { key: 1, data: 'up' } }],
-        [{ isActive: false, tab: { key: 2, data: 'town' } }],
-        [{ isActive: false, tab: { key: 3, data: 'funk' } }]
-      ])
-    })
+    // passed from effect components
+    expect(listProps).toHaveProperty(
+      'setBackgroundColor',
+      bg.setBackgroundColor
+    )
+    expect(listProps).toHaveProperty('addDecorator', bg.addDecorator)
+    expect(listProps).toHaveProperty('addFeedbackIn', press.addFeedbackIn)
+    expect(listProps).toHaveProperty(
+      'enqueueFeedbackOut',
+      press.enqueueFeedbackOut
+    )
   })
 })
