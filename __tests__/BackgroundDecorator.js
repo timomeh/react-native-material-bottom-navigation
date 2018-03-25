@@ -40,13 +40,14 @@ describe('BackgroundDecorator', () => {
       .instance()
       .addDecorator(decoratorData)
 
+    expect(bgDecorator().state().decorators[0]).toHaveProperty('key')
     expect(bgDecorator().state().decorators[0]).toHaveProperty('x', 0)
     expect(bgDecorator().state().decorators[0]).toHaveProperty('y', 0)
     expect(bgDecorator().state().decorators[0]).toHaveProperty('color', 'red')
-    expect(bgDecorator().state().decorators[0]).toHaveProperty('key')
   })
 
   it('renders all current decorators', () => {
+    // Add some decorators
     const decoratorData = { x: 0, y: 0, color: 'red' }
     bgDecorator()
       .instance()
