@@ -21,9 +21,9 @@ declare module 'react-native-material-bottom-navigation' {
     pressColor?: string
   }
 
-  declare export type EasingFunction = (t: number) => number
+  declare type EasingFunction = (t: number) => number
 
-  declare export type AnimationDefinition = (
+  declare type AnimationDefinition = (
     progress: AnimatedValue
   ) => AnimatedViewStyleProp
 
