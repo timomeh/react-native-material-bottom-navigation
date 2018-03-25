@@ -1,6 +1,8 @@
 // @flow
 
 declare module 'react-native-material-bottom-navigation' {
+  // A few type definitions.
+  // This is adoped from react-navigation/flow/react-navigation.js
   declare type StyleObj =
     | null
     | void
@@ -14,18 +16,16 @@ declare module 'react-native-material-bottom-navigation' {
   declare type AnimatedViewStyleProp = StyleObj
   declare type AnimatedTextStyleProp = StyleObj
   declare type AnimatedValue = Object
+  declare type EasingFunction = (t: number) => number
+  declare type AnimationDefinition = (
+    progress: AnimatedValue
+  ) => AnimatedViewStyleProp
 
   declare export type TabConfig = {
     key: number | string,
     barColor?: string,
     pressColor?: string
   }
-
-  declare type EasingFunction = (t: number) => number
-
-  declare type AnimationDefinition = (
-    progress: AnimatedValue
-  ) => AnimatedViewStyleProp
 
   declare export type BottomNavigationProps = {
     tabs: Array<TabConfig>,
