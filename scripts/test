@@ -3,7 +3,7 @@
 const { execSync } = require('child_process')
 
 if (process.env.CI) {
-  execSync('npm run test:ci')
+  execSync('npm run test:ci', { stdio: 'inherit' })
 } else {
-  execSync('npm run test:watch')
+  execSync('npm run test:watch', { stdio: 'inherit' })
 }

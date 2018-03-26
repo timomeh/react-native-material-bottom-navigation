@@ -89,4 +89,30 @@ describe('PressFeedback', () => {
       animateOut: true
     })
   })
+
+  it('removes a press when finished', () => {
+    // Add some presses...
+    pressFeedback()
+      .instance()
+      .addFeedbackIn({ key: 'meh', x: 1, y: 2, color: 'white' })
+    pressFeedback()
+      .instance()
+      .addFeedbackIn({ key: 'this-out', x: 3, y: 4, color: 'green' })
+
+    pressFeedback().update()
+
+    pressFeedback()
+      .find(PressRippleAnimation)
+      .last()
+      .props()
+      .onOutEnd()
+
+    expect(pressFeedback().state().presses).toHaveLength(1)
+    expect(pressFeedback().state().presses).not.toContainEqual({
+      key: 'this-out',
+      x: 3,
+      y: 4,
+      color: 'green'
+    })
+  })
 })
