@@ -18,7 +18,7 @@
 
 <br />
 
-* **Pure JavaScript.** No native dependencies. No linking. Use it without obstacles.
+* **Pure JavaScript.** No native dependencies. No linking. No obstacles.
 * **Looks beautiful.** Stunning and fluid animations. You won't believe it's not a native view.
 * **Customize it.** You can adjust nearly everything to make it fit perfectly to your app.
 * **Easy to use.** Uses established React patterns for both simple and advanced usage.
