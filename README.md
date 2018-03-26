@@ -46,6 +46,21 @@ yarn add react-native-material-bottom-navigation
 
 ## Demo
 
+<p align="center">
+  <img src=".github/demo-shifting.gif" width="400" height="180" /><br />
+  <small><b>Shifting Tab</b></small>
+</p>
+
+<p align="center">
+  <img src=".github/demo-full.gif" width="400" height="180" /><br />
+  <small><b>Full Tab</b></small>
+</p>
+
+<p align="center">
+  <img src=".github/demo-icon.gif" width="400" height="180" /><br />
+  <small><b>Icon Tab</b></small>
+</p>
+
 ## Usage
 
 This library uses ["render props"](https://reactjs.org/docs/render-props.html) as simple technique for component composition. The example below shows the basic usage of the Bottom Navigation.
