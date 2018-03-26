@@ -1,6 +1,8 @@
 <h1 align="center">
-  <img src="/.github/logo.png" width="612" height="180" alt="react-native-material-bottom-navigation" />
+  <img src="/.github/logo.png" width="612" alt="react-native-material-bottom-navigation" />
 </h1>
+
+<br />
 
 <p align="center">
   <a href="https://www.npmjs.com/package/react-native-material-bottom-navigation">
@@ -14,11 +16,15 @@
   <b>A beautiful, customizable and easy-to-use<br />Material Design Bottom Navigation for react-native.</b>
 </p>
 
+<br />
+
 * **Pure JavaScript.** No native dependencies. No linking. Use it without obstacles.
 * **Looks beautiful.** Stunning and fluid animations. You won't believe it's not a native view.
-* **Customize it.** You can adjust nearly everything to make it fit perfectly inside your app.
-* **Easy to use.** Uses established React patterns, for simple or advanced usage.
-* **Pluggable.** Includes customizable Tabs and Badges. Or create and use your own.
+* **Customize it.** You can adjust nearly everything to make it fit perfectly to your app.
+* **Easy to use.** Uses established React patterns for both simple and advanced usage.
+* **Pluggable.** Includes customizable Tabs and Badges. Not enough? Create and use your own!
+
+<br />
 
 ## Installation
 
@@ -48,24 +54,24 @@ yarn add react-native-material-bottom-navigation
 
 <p align="center">
   <img src=".github/demo-shifting.gif" width="400" height="180" /><br />
-  <small><b>Shifting Tab</b></small>
+  <b>Shifting Tab</b>
 </p>
 
 <p align="center">
   <img src=".github/demo-full.gif" width="400" height="180" /><br />
-  <small><b>Full Tab</b></small>
+  <b>Full Tab</b>
 </p>
 
 <p align="center">
   <img src=".github/demo-icon.gif" width="400" height="180" /><br />
-  <small><b>Icon Tab</b></small>
+  <b>Icon Tab</b>
 </p>
 
 ## Usage
 
-This library uses ["render props"](https://reactjs.org/docs/render-props.html) as simple technique for component composition. The example below shows the basic usage of the Bottom Navigation.
+This library uses ["render props"](https://reactjs.org/docs/render-props.html) as simple technique for component composition. The example below shows the basic usage of the Bottom Navigation. All available Props are listed in the [Documentation](#documentation).
 
-You can also find more [examples](/examples) in the root of this repository.
+There are also [more examples here](/examples).
 
 ```js
 import BottomNavigation, {
