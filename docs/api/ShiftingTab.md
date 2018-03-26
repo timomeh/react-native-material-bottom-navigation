@@ -1,12 +1,12 @@
 <!--
   Warning: this is an automatically generated documentation.
   To change the contents of this file, edit the doc comments
-  in lib/ShiftingTab.js
+  in /lib/ShiftingTab.js
 -->
 
 # ShiftingTab
 
-<small>Implementation: [`lib/ShiftingTab.js`](lib/ShiftingTab.js)</small>
+<small>Implementation: [`/lib/ShiftingTab.js`](/lib/ShiftingTab.js)</small>
 
 A Tab for the shifting bottom navigation bar, implemented according to the
 Bottom navigation specs.
@@ -22,7 +22,7 @@ predefined style- and animation-props.
 ## Props
 
 > <small>ShiftingTab uses moreProps from these composed components:</small>
-  <small>[FullTab](lib/FullTab.js)</small>
+  <small>[FullTab](/lib/FullTab.js)</small>
 
 ### isActive
 **Required.**  

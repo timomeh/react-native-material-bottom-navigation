@@ -1,12 +1,12 @@
 <!--
   Warning: this is an automatically generated documentation.
   To change the contents of this file, edit the doc comments
-  in lib/IconTab.js
+  in /lib/IconTab.js
 -->
 
 # IconTab
 
-<small>Implementation: [`lib/IconTab.js`](lib/IconTab.js)</small>
+<small>Implementation: [`/lib/IconTab.js`](/lib/IconTab.js)</small>
 
 A Tab with an icon.
 

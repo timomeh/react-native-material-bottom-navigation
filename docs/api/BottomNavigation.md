@@ -1,12 +1,12 @@
 <!--
   Warning: this is an automatically generated documentation.
   To change the contents of this file, edit the doc comments
-  in lib/BottomNavigation.js
+  in /lib/BottomNavigation.js
 -->
 
 # BottomNavigation
 
-<small>Implementation: [`lib/BottomNavigation.js`](lib/BottomNavigation.js)</small>
+<small>Implementation: [`/lib/BottomNavigation.js`](/lib/BottomNavigation.js)</small>
 
 The BottomNavigation renders all tabs and takes care of running animations.
 

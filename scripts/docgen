@@ -11,7 +11,8 @@ const docTemplate = fs.readFileSync(
 )
 
 const renderer = new ReactDocGenMarkdownRenderer({
-  template: docTemplate
+  template: docTemplate,
+  componentsBasePath: path.resolve(__dirname, '..')
 })
 
 const components = [
@@ -35,7 +36,7 @@ const allDocgen = components.map(component => {
     ...component,
     doc: {
       ...doc,
-      file: path.resolve(__dirname, '..', 'lib', component.input)
+      file: path.join('/', 'lib', component.input)
     }
   }
 })
@@ -50,7 +51,7 @@ allDocgen.forEach(({ input, output, doc }) => {
     : []
 
   const docMarkdown = renderer.render(
-    path.resolve(__dirname, '..', 'lib', input),
+    path.join('/', 'lib', input),
     doc,
     composes
   )

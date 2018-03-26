@@ -1,12 +1,12 @@
 <!--
   Warning: this is an automatically generated documentation.
   To change the contents of this file, edit the doc comments
-  in lib/FullTab.js
+  in /lib/FullTab.js
 -->
 
 # FullTab
 
-<small>Implementation: [`lib/FullTab.js`](lib/FullTab.js)</small>
+<small>Implementation: [`/lib/FullTab.js`](/lib/FullTab.js)</small>
 
 A Tab with a label and an icon.
 

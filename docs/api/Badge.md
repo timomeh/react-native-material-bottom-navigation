@@ -1,12 +1,12 @@
 <!--
   Warning: this is an automatically generated documentation.
   To change the contents of this file, edit the doc comments
-  in lib/Badge.js
+  in /lib/Badge.js
 -->
 
 # Badge
 
-<small>Implementation: [`lib/Badge.js`](lib/Badge.js)</small>
+<small>Implementation: [`/lib/Badge.js`](/lib/Badge.js)</small>
 
 A Badge which can be rendered on top of a Tab.
 
