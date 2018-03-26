@@ -10,7 +10,9 @@
     "lib/"
   ],
   "scripts": {
-    "test": "jest --watch --env=jsdom",
+    "test": "./scripts/test",
+    "test:watch": "jest --watch --env=jsdom",
+    "test:ci": "export JEST_JUNIT_OUTPUT=\"coverage/junit/js-test-results.xml\" && jest --env=jsdom --runInBand --ci --coverage --testResultsProcessor=\"jest-junit\"",
     "lint": "eslint ."
   },
   "repository": {
@@ -41,7 +43,8 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-react-native": "^3.2.1",
     "flow-bin": "^0.68.0",
-    "jest": "^22.4.3",
+    "jest": "22.4.0",
+    "jest-junit": "^3.6.0",
     "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
