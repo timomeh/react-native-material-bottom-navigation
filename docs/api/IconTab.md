@@ -13,57 +13,6 @@ A Tab with an icon.
 ## Props
 
 
-### isActive
-**Required.**  
-Type: `Boolean`
-
-If `true`, the tab is visually active.
-
-
-
-### style
-
-Type: `ViewPropTypes.style`
-
-Extends the style of the tab's view.
-
-
-
-### renderIcon
-**Required.**  
-Type: `Function`
-
-The render prop to render the icon. Arguments: `({ isActive })`
-
-
-
-### renderBadge
-
-Type: `Function`
-
-The render prop to render the badge. Arguments: `({ isActive })`
-
-
-Default: `() => null`
-
-### showBadge
-
-Type: `Boolean`
-
-If `true`, the badge will be rendered.
-
-
-Default: `false`
-
-### badgeSlotStyle
-
-Type: `ViewPropTypes.style`
-
-Extends the style of the badge's wrapping View.
-
-
-Default: `{}`
-
 ### animationDuration
 
 Type: `Number`
@@ -81,6 +30,39 @@ The easing function of the animation between active and inactive.
 
 
 Default: `easings.easeInOut`
+
+### badgeAnimation
+
+Type: `Function`
+
+Defines the animation of the badge from active to inactive. Receives the
+animation progress (`AnimatedValue` between 0 and 1), needs to return a
+style object.
+See also: https://facebook.github.io/react-native/docs/animations.html#interpolation
+
+
+Default:  
+```js
+progress => ({
+  transform: [
+    {
+      scale: progress.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0.9, 1]
+      })
+    }
+  ]
+})
+```
+
+### badgeSlotStyle
+
+Type: `ViewPropTypes.style`
+
+Extends the style of the badge's wrapping View.
+
+
+Default: `{}`
 
 ### iconAnimation
 
@@ -110,27 +92,45 @@ progress => ({
 })
 ```
 
-### badgeAnimation
+### isActive
+**Required.**  
+Type: `Boolean`
+
+If `true`, the tab is visually active.
+
+
+
+### renderBadge
 
 Type: `Function`
 
-Defines the animation of the badge from active to inactive. Receives the
-animation progress (`AnimatedValue` between 0 and 1), needs to return a
-style object.
-See also: https://facebook.github.io/react-native/docs/animations.html#interpolation
+The render prop to render the badge. Arguments: `({ isActive })`
 
 
-Default:  
-```js
-progress => ({
-  transform: [
-    {
-      scale: progress.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0.9, 1]
-      })
-    }
-  ]
-})
-```
+Default: `() => null`
+
+### renderIcon
+**Required.**  
+Type: `Function`
+
+The render prop to render the icon. Arguments: `({ isActive })`
+
+
+
+### showBadge
+
+Type: `Boolean`
+
+If `true`, the badge will be rendered.
+
+
+Default: `false`
+
+### style
+
+Type: `ViewPropTypes.style`
+
+Extends the style of the tab's view.
+
+
 

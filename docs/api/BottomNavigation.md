@@ -31,54 +31,6 @@ can change to another screen.
 ## Props
 
 
-### tabs[].key
-**Required.**  
-Type: `Union<Number | String>`
-
-A unique identifier for a tab.
-
-
-
-### tabs[].barColor
-
-Type: `String`
-
-The background color of the bottom navigation bar.
-
-
-
-### tabs[].pressColor
-
-Type: `String`
-
-The color of the touch feedback.
-
-
-
-### tabs[].pressSize
-
-Type: `Number`
-
-The diameter of the expanded touch feedback.
-
-
-
-### tabs
-**Required.**  
-Type: `Array[]<Shape>`
-
-The config of all tabs. Each item will be called in `renderTab`.
-
-
-
-### renderTab
-**Required.**  
-Type: `Function`
-
-The render prop to render a tab. Arguments: `({ isActive, tab })`
-
-
-
 ### activeTab
 
 Type: `Union<Number | String>`
@@ -98,13 +50,11 @@ Arguments: `(newTab, oldTab)`
 
 
 
-### useLayoutAnimation
+### renderTab
+**Required.**  
+Type: `Function`
 
-Type: `Boolean`
-
-If `true`, a LayoutAnimation will be triggered when the active tab
-changes. Necessary to get nice animations when using
-[ShiftingTab](ShiftingTab.md).
+The render prop to render a tab. Arguments: `({ isActive, tab })`
 
 
 
@@ -113,6 +63,56 @@ changes. Necessary to get nice animations when using
 Type: `ViewPropTypes.style`
 
 Extends the style of the root view.
+
+
+
+### tabs
+**Required.**  
+Type: `Array[]<Shape>`
+
+The config of all tabs. Each item will be called in `renderTab`.
+
+
+
+### tabs[].barColor
+
+Type: `String`
+
+The background color of the bottom navigation bar.
+
+
+
+### tabs[].key
+**Required.**  
+Type: `Union<Number | String>`
+
+A unique identifier for a tab.
+
+
+
+### tabs[].pressColor
+
+Type: `String`
+
+The color of the touch feedback.
+
+
+
+### tabs[].pressSize
+
+Type: `Number`
+
+The diameter of the expanded touch feedback.
+
+
+
+### useLayoutAnimation
+
+Type: `Boolean`
+
+If `true`, a LayoutAnimation will be triggered when the active tab
+changes. Necessary to get nice animations when using
+[ShiftingTab](ShiftingTab.md).
 
 
 

@@ -24,69 +24,6 @@ predefined style- and animation-props.
 > <small>ShiftingTab uses moreProps from these composed components:</small>
   <small>[FullTab](/lib/FullTab.js)</small>
 
-### isActive
-**Required.**  
-Type: `Boolean`
-
-If `true`, the tab is visually active.
-
-
-
-### style
-
-Type: `ViewPropTypes.style`
-
-Extends the style of the tab's view.
-
-
-
-### iconAnimation
-
-Type: `Function`
-
-Defines the animation of the icon from active to inactive. Receives the
-animation progress (0-1), needs to return a style object.
-See also: https://facebook.github.io/react-native/docs/animations.html#interpolation
-
-
-Default:  
-```js
-progress => ({
-  transform: [
-    {
-      translateY: progress.interpolate({
-        inputRange: [0, 1],
-        outputRange: [7, 0]
-      })
-    }
-  ],
-  opacity: progress.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0.8, 1]
-  })
-})
-```
-
-### labelAnimation
-
-Type: `Function`
-
-Defines the animation of the label from active to inactive. Receives the
-animation progress (`AnimatedValue` between 0 and 1), needs to return a
-style object.
-See also: https://facebook.github.io/react-native/docs/animations.html#interpolation
-
-
-Default:  
-```js
-progress => ({
-  opacity: progress.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0, 1]
-  })
-})
-```
-
 ### badgeAnimation
 
 Type: `Function`
@@ -116,4 +53,67 @@ progress => ({
   ]
 })
 ```
+
+### iconAnimation
+
+Type: `Function`
+
+Defines the animation of the icon from active to inactive. Receives the
+animation progress (0-1), needs to return a style object.
+See also: https://facebook.github.io/react-native/docs/animations.html#interpolation
+
+
+Default:  
+```js
+progress => ({
+  transform: [
+    {
+      translateY: progress.interpolate({
+        inputRange: [0, 1],
+        outputRange: [7, 0]
+      })
+    }
+  ],
+  opacity: progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0.8, 1]
+  })
+})
+```
+
+### isActive
+**Required.**  
+Type: `Boolean`
+
+If `true`, the tab is visually active.
+
+
+
+### labelAnimation
+
+Type: `Function`
+
+Defines the animation of the label from active to inactive. Receives the
+animation progress (`AnimatedValue` between 0 and 1), needs to return a
+style object.
+See also: https://facebook.github.io/react-native/docs/animations.html#interpolation
+
+
+Default:  
+```js
+progress => ({
+  opacity: progress.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 1]
+  })
+})
+```
+
+### style
+
+Type: `ViewPropTypes.style`
+
+Extends the style of the tab's view.
+
+
 

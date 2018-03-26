@@ -167,7 +167,7 @@ const flattenProps = props => {
     }, {})
 
     Object.keys(flattenedProps)
-      // .sort()
+      .sort()
       .forEach(key => {
         sortedProps[key] = flattenedProps[key]
       })
