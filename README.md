@@ -97,7 +97,7 @@ export default class App extends React.Component {
     }
   ]
 
-  renderIcon = icon = ({ isActive }) => (
+  renderIcon = icon => ({ isActive }) => (
     <Icon size={24} color="white" name={tab.icon} />
   ))
 
