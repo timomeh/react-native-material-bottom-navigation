@@ -1,2 +1,3 @@
 package*.json
 examples/**/node_modules
+coverage/

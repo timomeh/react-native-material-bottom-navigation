@@ -10,6 +10,7 @@
     "lib/"
   ],
   "scripts": {
+    "docs:gen:api": "./scripts/docgen",
     "test": "./scripts/test",
     "test:watch": "jest --watch --env=jsdom",
     "test:ci": "export JEST_JUNIT_OUTPUT=\"coverage/junit/js-test-results.xml\" && jest --env=jsdom --runInBand --ci --coverage --testResultsProcessor=\"jest-junit\"",
@@ -46,6 +47,8 @@
     "jest-junit": "^3.6.0",
     "prettier": "^1.10.2",
     "react": "^16.2.0",
+    "react-docgen": "^2.20.1",
+    "react-docgen-markdown-renderer": "^1.0.2",
     "react-dom": "^16.2.0",
     "react-native": "^0.54.2",
     "react-native-mock": "^0.3.1",

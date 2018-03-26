@@ -1,0 +1,32 @@
+<!--
+  Warning: this is an automatically generated documentation.
+  To change the contents of this file, edit the doc comments
+  in {{srcLink}}
+-->
+
+# {{componentName}}
+
+{{#if srcLink }}<small>Implementation: [`{{srcLink}}`]({{srcLink}})</small>{{/if}}
+
+{{#if description}}{{{description}}}{{/if}}
+
+## Props
+
+{{#if composes.length}}
+> <small>{{componentName}} uses moreProps from these composed components:</small>
+  {{#each composes}}<small>[{{this.componentName}}]({{this.srcLink}})</small>{{/each}}
+{{/if}}
+
+{{#each this.props}}
+### {{@key}}
+{{#if this.required}}**Required.**  {{/if}}
+Type: `{{> (typePartial this) this}}`
+
+{{#if this.description}}{{{this.description}}}{{/if}}
+
+
+{{#if this.defaultValue}}
+Default: {{ defaultPropBody this.defaultValue }}
+{{/if}}
+
+{{/each}}
