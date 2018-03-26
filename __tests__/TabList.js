@@ -1,10 +1,18 @@
 import React from 'react'
-import { View, TouchableWithoutFeedback } from 'react-native'
+import {
+  View,
+  TouchableWithoutFeedback,
+  UIManager,
+  LayoutAnimation
+} from 'react-native'
 import { mount } from 'enzyme'
 
 import TabList from '../lib/TabList'
 
 const MockTab = () => <View />
+
+UIManager.configureNextLayoutAnimation = jest.fn()
+jest.useFakeTimers()
 
 describe('TabList', () => {
   const consoleError = console.error
@@ -214,6 +222,44 @@ describe('TabList', () => {
 
       expect(tabList().state().activeTab).toBe('up')
       expect(props.setBackgroundColor).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('with layout animations', () => {
+    beforeEach(() => {
+      mountedList = null
+      props = {
+        tabs: [
+          { key: 'up', text: 'Up!', barColor: 'green', pressColor: 'green' },
+          { key: 'town', text: 'Town!', barColor: 'blue', pressColor: 'blue' },
+          { key: 'funk', text: 'Funk!', barColor: 'red', pressColor: 'red' }
+        ],
+        useLayoutAnimation: true,
+        onTabPress: jest.fn(),
+        renderTab: jest.fn(() => <MockTab />),
+        setBackgroundColor: jest.fn(),
+        addDecorator: jest.fn(),
+        addFeedbackIn: jest.fn(),
+        enqueueFeedbackOut: jest.fn()
+      }
+    })
+
+    it('handles tab press', () => {
+      const spy = jest.spyOn(LayoutAnimation, 'configureNext')
+      const fakeEvent = { nativeEvent: {} }
+      tabList()
+      props.setBackgroundColor.mockClear()
+
+      tabList()
+        .find(TouchableWithoutFeedback)
+        .at(1)
+        .props()
+        .onPress(fakeEvent)
+
+      jest.runAllTimers()
+
+      expect(tabList().state().activeTab).toBe('town')
+      expect(spy).toHaveBeenCalled()
     })
   })
 })
