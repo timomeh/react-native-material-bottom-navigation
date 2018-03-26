@@ -25,7 +25,7 @@ describe('BackgroundRippleAnimation', () => {
   const consoleError = console.error
   let mountedRipple
   let props
-  const spy = jest.spyOn(Animated, 'timing')
+  const animationFn = jest.spyOn(Animated, 'timing')
   const ripple = () => {
     if (!mountedRipple) {
       mountedRipple = shallow(<BackgroundRippleAnimation {...props} />)
@@ -34,7 +34,7 @@ describe('BackgroundRippleAnimation', () => {
   }
 
   beforeEach(() => {
-    spy.mockClear()
+    animationFn.mockClear()
     mountedRipple = null
     props = {
       containerWidth: 200,
@@ -59,10 +59,8 @@ describe('BackgroundRippleAnimation', () => {
   })
 
   it('initially runs through animation', () => {
-    const spy = jest.spyOn(Animated, 'timing')
-
     ripple()
-    expect(spy).toHaveBeenCalled()
+    expect(animationFn).toHaveBeenCalled()
     expect(props.onAnimationEnd).not.toHaveBeenCalled()
 
     jest.advanceTimersByTime(400)
