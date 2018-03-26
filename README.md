@@ -3,16 +3,15 @@
 </h1>
 
 <p align="center">
-
-  [![npm version](https://img.shields.io/npm/v/react-native-material-bottom-navigation.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-material-bottom-navigation)
-  [![npm downloads](https://img.shields.io/npm/dm/react-native-material-bottom-navigation.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-material-bottom-navigation)
+  <a href="https://www.npmjs.com/package/react-native-material-bottom-navigation">
+    <img src="https://img.shields.io/npm/v/react-native-material-bottom-navigation.svg?style=for-the-badge" alt="npm version" />
+  </a>
+  <a href="https://www.npmjs.com/package/react-native-material-bottom-navigation">
+    <img src="https://img.shields.io/npm/dm/react-native-material-bottom-navigation.svg?style=for-the-badge" alt="downloads" />
+  </a>
 </p>
-
 <p align="center">
-  <b>
-    A beautiful, customizable and easy-to-use
-    Material Design Bottom Navigation for react-native.
-  </b>
+  <b>A beautiful, customizable and easy-to-use<br />Material Design Bottom Navigation for react-native.</b>
 </p>
 
 * **Pure JavaScript.** No native dependencies. No linking. Use it without obstacles.
