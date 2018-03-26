@@ -48,7 +48,7 @@ describe('PressFeedback', () => {
 
   it('renders all current presses', () => {
     // Add some presses
-    const pressData = { key: 13, x: 3, y: 7, color: 'red' }
+    const pressData = { key: 13, x: 3, y: 7, color: 'red', size: 80 }
     pressFeedback()
       .instance()
       .addFeedbackIn(pressData)
