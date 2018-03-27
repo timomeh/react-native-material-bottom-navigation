@@ -63,7 +63,12 @@ export default class App extends React.Component {
         <View style={{ flex: 1, justifyContent: 'flex-end' }}>
           <Image
             source={require('./cut.png')}
-            style={{ resizeMode: 'contain', width: 412, bottom: -120, opacity: 0.5 }}
+            style={{
+              resizeMode: 'contain',
+              width: 412,
+              bottom: -120,
+              opacity: 0.5
+            }}
           />
         </View>
         <BottomNavigation
