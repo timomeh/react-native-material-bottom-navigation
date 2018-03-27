@@ -6,16 +6,9 @@
 
 # {{componentName}}
 
-{{#if srcLink }}<small>Implementation: [`{{srcLink}}`]({{srcLink}})</small>{{/if}}
-
 {{#if description}}{{{description}}}{{/if}}
 
 ## Props
-
-{{#if composes.length}}
-> <small>{{componentName}} uses moreProps from these composed components:</small>
-  {{#each composes}}<small>[{{this.componentName}}]({{this.srcLink}})</small>{{/each}}
-{{/if}}
 
 {{#each this.props}}
 ### {{@key}}

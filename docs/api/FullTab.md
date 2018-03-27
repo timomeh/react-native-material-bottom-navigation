@@ -6,12 +6,9 @@
 
 # FullTab
 
-<small>Implementation: [`/lib/FullTab.js`](/lib/FullTab.js)</small>
-
 A Tab with a label and an icon.
 
 ## Props
-
 
 ### animationDuration
 
@@ -165,7 +162,6 @@ Type: `Function`
 The render prop to render the badge. Arguments: `({ isActive })`
 
 
-Default: `() => null`
 
 ### renderIcon
 **Required.**  

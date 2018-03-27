@@ -209,12 +209,25 @@ class ReactDocGenMarkdownRenderer {
       })
     }
 
+    const mergedProps = Object.assign(
+      {},
+      ...composesFlattened.map(({ props }) => props),
+      sortedProps
+    )
+
+    const mergedSortedProps = Object.keys(mergedProps)
+      .sort()
+      .reduce((acc, val) => {
+        acc[val] = mergedProps[val]
+        return acc
+      }, {})
+
     return this.template({
       componentName,
       srcLink: file.replace(this.options.componentsBasePath + '/', ''),
       description: docs.description,
       isMissingComposes: (docs.composes || []).length !== composes.length,
-      props: sortedProps,
+      props: mergedSortedProps,
       composes: composesFlattened
     })
   }

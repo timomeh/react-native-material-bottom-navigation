@@ -6,8 +6,6 @@
 
 # ShiftingTab
 
-<small>Implementation: [`/lib/ShiftingTab.js`](/lib/ShiftingTab.js)</small>
-
 A Tab for the shifting bottom navigation bar, implemented according to the
 Bottom navigation specs.
 In its inactive state, only the icon is visible.
@@ -16,13 +14,28 @@ In its active state, the tab's label is also visible, and the tab is wider.
 To enable a nice transition between both states, the `BottomNavigation`
 needs to have the `useLayoutAnimation` prop set to `true`.
 
-The ShiftingTab is basically a [FullTab](docs/api/FullTab.md) with
+The ShiftingTab is basically a [FullTab](./FullTab.md) with
 predefined style- and animation-props.
 
 ## Props
 
-> <small>ShiftingTab uses moreProps from these composed components:</small>
-  <small>[FullTab](/lib/FullTab.js)</small>
+### animationDuration
+
+Type: `Number`
+
+The duration of the animation between active and inactive.
+
+
+Default: `160`
+
+### animationEasing
+
+Type: `Function`
+
+The easing function of the animation between active and inactive.
+
+
+Default: `easings.easeInOut`
 
 ### badgeAnimation
 
@@ -53,6 +66,14 @@ progress => ({
   ]
 })
 ```
+
+### badgeSlotStyle
+
+Type: `ViewPropTypes.style`
+
+Extends the style of the badge's wrapping View.
+
+
 
 ### iconAnimation
 
@@ -89,6 +110,14 @@ If `true`, the tab is visually active.
 
 
 
+### label
+**Required.**  
+Type: `String`
+
+The text of the label.
+
+
+
 ### labelAnimation
 
 Type: `Function`
@@ -108,6 +137,48 @@ progress => ({
   })
 })
 ```
+
+### labelProps
+
+Type: `Object`
+
+Useful to add more props to the Text component of the label.
+
+
+Default: `{ numberOfLines: 1 }`
+
+### labelStyle
+
+Type: `Text.propTypes.style`
+
+Extends the style of the label.
+
+
+
+### renderBadge
+
+Type: `Function`
+
+The render prop to render the badge. Arguments: `({ isActive })`
+
+
+
+### renderIcon
+**Required.**  
+Type: `Function`
+
+The render prop to render the icon. Arguments: `({ isActive })`
+
+
+
+### showBadge
+
+Type: `Boolean`
+
+If `true`, the badge will be rendered.
+
+
+Default: `false`
 
 ### style
 

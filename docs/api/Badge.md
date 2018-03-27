@@ -6,12 +6,9 @@
 
 # Badge
 
-<small>Implementation: [`/lib/Badge.js`](/lib/Badge.js)</small>
-
 A Badge which can be rendered on top of a Tab.
 
 ## Props
-
 
 ### children
 

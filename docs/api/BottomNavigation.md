@@ -6,8 +6,6 @@
 
 # BottomNavigation
 
-<small>Implementation: [`/lib/BottomNavigation.js`](/lib/BottomNavigation.js)</small>
-
 The BottomNavigation renders all tabs and takes care of running animations.
 
 It uses a [render prop](https://reactjs.org/docs/render-props.html) to
@@ -29,7 +27,6 @@ become active once it's pressed. `onTabPress` will also be called, so you
 can change to another screen.
 
 ## Props
-
 
 ### activeTab
 

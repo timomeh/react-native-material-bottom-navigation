@@ -6,12 +6,9 @@
 
 # IconTab
 
-<small>Implementation: [`/lib/IconTab.js`](/lib/IconTab.js)</small>
-
 A Tab with an icon.
 
 ## Props
-
 
 ### animationDuration
 
@@ -62,7 +59,6 @@ Type: `ViewPropTypes.style`
 Extends the style of the badge's wrapping View.
 
 
-Default: `{}`
 
 ### iconAnimation
 
@@ -107,7 +103,6 @@ Type: `Function`
 The render prop to render the badge. Arguments: `({ isActive })`
 
 
-Default: `() => null`
 
 ### renderIcon
 **Required.**  
