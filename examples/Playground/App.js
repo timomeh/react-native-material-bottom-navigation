@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Image } from 'react-native'
 import BottomNavigation, {
-  ShiftingTab
+  IconTab,
+  Badge
 } from 'react-native-material-bottom-navigation'
 import Icon from '@expo/vector-icons/MaterialCommunityIcons'
 
@@ -17,14 +18,14 @@ export default class App extends React.Component {
     {
       key: 'movies-tv',
       label: 'Movies & TV',
-      barColor: '#B71C1C',
+      barColor: '#00695C',
       pressColor: 'rgba(255, 255, 255, 0.16)',
       icon: 'movie'
     },
     {
       key: 'music',
       label: 'Music',
-      barColor: '#E64A19',
+      barColor: '#6A1B9A',
       pressColor: 'rgba(255, 255, 255, 0.16)',
       icon: 'music-note'
     },
@@ -34,13 +35,6 @@ export default class App extends React.Component {
       barColor: '#1565C0',
       pressColor: 'rgba(255, 255, 255, 0.16)',
       icon: 'book'
-    },
-    {
-      key: 'newsstand',
-      label: 'Newsstand',
-      barColor: '#6A1B9A',
-      pressColor: 'rgba(255, 255, 255, 0.16)',
-      icon: 'newspaper'
     }
   ]
 
@@ -53,8 +47,10 @@ export default class App extends React.Component {
   )
 
   renderTab = ({ tab, isActive }) => (
-    <ShiftingTab
+    <IconTab
       isActive={isActive}
+      showBadge={tab.key === 'movies-tv'}
+      renderBadge={() => <Badge>2</Badge>}
       key={tab.key}
       label={tab.label}
       renderIcon={this.renderIcon(tab.icon)}
@@ -63,8 +59,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <View style={{ flex: 1 }} />
+      <View style={{ flex: 1, backgroundColor: 'white' }}>
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <Image
+            source={require('./cut.png')}
+            style={{ resizeMode: 'contain', width: 412, bottom: -120, opacity: 0.5 }}
+          />
+        </View>
         <BottomNavigation
           onTabPress={activeTab => this.setState({ activeTab })}
           renderTab={this.renderTab}
