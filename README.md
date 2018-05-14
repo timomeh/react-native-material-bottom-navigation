@@ -152,7 +152,7 @@ You can also view the entire documentation on GitBook: https://timomeh.gitbook.i
 
 ### React Navigation Support
 
-In contrary to earlier releases, this library (currently) _does not support_ React Navigation out of the box. React Navigation now ships with an own Material Bottom Navigation: [`createMaterialTopTabNavigator`](https://reactnavigation.org/docs/en/material-top-tab-navigator.html). The API of React Navigation changes quite frequently, and (until now) it wasn't easy to always keep track and be up-to-date. Also I don't want to favor and promote React Navigation over other Navigation Libraries.
+In contrary to earlier releases, this library (currently) _does not support_ React Navigation out of the box. React Navigation now ships with an own Material Bottom Navigation: [`createMaterialBottomTabNavigator`](https://reactnavigation.org/docs/en/material-bottom-tab-navigator.html). The API of React Navigation changes quite frequently, and (until now) it wasn't easy to always keep track and be up-to-date. Also I don't want to favor and promote React Navigation over other Navigation Libraries.
 
 If you integrate material-bottom-navigation with a navigation library in your project, feel free to share your knowledge by opening an [Issue](https://github.com/timomeh/react-native-material-bottom-navigation/issues), submitting a [Pull Request](https://github.com/timomeh/react-native-material-bottom-navigation/pulls) or event create your own module which uses material-bottom-navigation.
 
