@@ -46,6 +46,7 @@ yarn add react-native-material-bottom-navigation
 * [Demo](#demo)
 * [Usage](#usage)
 * [Documentation](#documentation)
+* [Notes](#notes)
 * [Contribute](#contribute)
 * [Authors](#authors)
 * [License](#license)
@@ -71,7 +72,9 @@ yarn add react-native-material-bottom-navigation
 
 This library uses ["render props"](https://reactjs.org/docs/render-props.html) as simple technique for component composition. The example below shows the basic usage of the Bottom Navigation. All available Props are listed in the [Documentation](#documentation).
 
-There are also [more examples here](/examples).
+⚠️ Out-of-the-box support for React Navigation was removed with v1. [(Read more.)](#react-navigation-support) You can still use [an earlier version](https://github.com/timomeh/react-native-material-bottom-navigation/releases/tag/v0.9.0).
+
+Also check out [the example apps](/examples).
 
 ```js
 import BottomNavigation, {
@@ -142,6 +145,18 @@ export default class App extends React.Component {
   * [`<FullTab />`](/docs/api/FullTab.md)
   * [`<IconTab />`](/docs/api/IconTab.md)
   * [`<ShiftingTab />`](/docs/api/ShiftingTab.md)
+
+## Notes
+
+### React Navigation Support
+
+In contrary to earlier releases, this library (currently) _does not support_ React Navigation out of the box. React Navigation now ships with an own Material Bottom Navigation: [`createMaterialTopTabNavigator`](https://reactnavigation.org/docs/en/material-top-tab-navigator.html). The API of React Navigation changes quite frequently, and (until now) it wasn't easy to always keep track and be up-to-date. Also I don't want to favor and promote React Navigation over other Navigation Libraries.
+
+If you integrate material-bottom-navigation with a navigation library in your project, feel free to share your knowledge by opening an [Issue](https://github.com/timomeh/react-native-material-bottom-navigation/issues), submitting a [Pull Request](https://github.com/timomeh/react-native-material-bottom-navigation/pulls) or event create your own module which uses material-bottom-navigation.
+
+### Updated Material Design Specs
+
+Google updated the Material Guidelines on Google I/O 2018 with new specifications, including the Bottom Navigation with a FAB in a centered cutout. material-bottom-navigation uses the _older_ specs and does not support those new specs.
 
 ## Contribute
 
