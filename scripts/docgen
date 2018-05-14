@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const reactDocs = require('react-docgen')
+const ReactDocGenMarkdownRenderer = require('./utils/docgen-markdown')
+
+const docTemplate = fs.readFileSync(
+  path.join(__dirname, 'utils', 'doc-template.hbs'),
+  'utf-8'
+)
+
+const renderer = new ReactDocGenMarkdownRenderer({
+  template: docTemplate,
+  componentsBasePath: path.resolve(__dirname, '..')
+})
+
+const components = [
+  { input: './Badge.js', output: './docs/api/Badge.md' },
+  {
+    input: './BottomNavigation.js',
+    output: './docs/api/BottomNavigation.md'
+  },
+  { input: './FullTab.js', output: './docs/api/FullTab.md' },
+  { input: './IconTab.js', output: './docs/api/IconTab.md' },
+  { input: './ShiftingTab.js', output: './docs/api/ShiftingTab.md' }
+]
+
+// Generate all docs
+const allDocgen = components.map(component => {
+  const componentPath = path.resolve('lib', component.input)
+  const fileContents = fs.readFileSync(componentPath, 'utf-8')
+  const doc = reactDocs.parse(fileContents)
+
+  return {
+    ...component,
+    doc: {
+      ...doc,
+      file: path.join('/', 'lib', component.input)
+    }
+  }
+})
+
+// Generate markdown for each doc
+allDocgen.forEach(({ input, output, doc }) => {
+  const composes = doc.composes
+    ? doc.composes.map(
+        composesName =>
+          allDocgen.find(({ input }) => input.includes(composesName)).doc
+      )
+    : []
+
+  const docMarkdown = renderer.render(
+    path.join('/', 'lib', input),
+    doc,
+    composes
+  )
+  fs.writeFileSync(output, docMarkdown, 'utf-8')
+})

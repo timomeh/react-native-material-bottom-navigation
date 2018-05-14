@@ -1,37 +1,65 @@
-import { ViewStyle, TextStyle } from 'react-native'
+import { ViewStyle, TextStyle, StyleProp, Animated } from 'react-native'
+
 declare module 'react-native-material-bottom-navigation' {
+  export interface TabConfig {
+    key: number | string
+    barColor?: string
+    pressColor?: string
+  }
+
+  export type AnimationDefinition = (progress: Animated.Value) => any
+  export type EasingFunction = (t: number) => number
+
   export interface BottomNavigationProps {
-    activeTab?: number
-    labelColor?: string
-    activeLabelColor?: string
-    rippleColor?: string
-    backgroundColor?: string
-    onTabChange?: (newTabIndex: number, oldTabIndex: number) => void
-    style?: ViewStyle
-    innerStyle?: ViewStyle
-    shifting?: boolean
+    tabs: { [index: number]: TabConfig }
+    renderTab: ({ isActive: boolean }) => JSX.Element
+    activeTab?: number | string
+    onTabPress?: (newTab: TabConfig, oldTab: TabConfig) => void
+    useLayoutAnimation?: boolean
+    style?: StyleProp<ViewStyle>
+    viewportHeight?: number
   }
 
-  export interface TabProps {
-    icon?: JSX.Element
-    activeIcon?: JSX.Element
-    label?: JSX.Element | string
-    labelColor?: string
-    activeLabelColor?: string
-    barBackgroundColor?: string
-    onPress?: (newTabIndex?: number) => void
-    badgeText?: JSX.Element | string
-    badgeSize?: number
-    badgeStyle?: {
-      container?: ViewStyle
-      text?: TextStyle
-    }
-    isBadgeVisible?: boolean
+  export interface IconTabProps {
+    isActive: boolean
+    style?: StyleProp<ViewStyle>
+    renderIcon: ({ isActive: boolean }) => JSX.Element
+    renderBadge?: ({ isActive: boolean }) => JSX.Element
+    showBadge?: boolean
+    badgeSlotStyle?: StyleProp<ViewStyle>
+    animationDuration?: number
+    animationEasing?: EasingFunction
+    iconAnimation?: AnimationDefinition
+    badgeAnimation?: AnimationDefinition
   }
 
-  export class BottomNavigation extends React.Component<
+  export interface FullTabProps {
+    isActive: boolean
+    style?: StyleProp<ViewStyle>
+    renderIcon: ({ isActive: boolean }) => JSX.Element
+    renderBadge?: ({ isActive: boolean }) => JSX.Element
+    showBadge?: boolean
+    badgeSlotStyle?: StyleProp<ViewStyle>
+    label: string
+    labelStyle?: StyleProp<TextStyle>
+    animationDuration?: number
+    animationEasing?: EasingFunction
+    iconAnimation?: AnimationDefinition
+    labelAnimation?: AnimationDefinition
+    badgeAnimation?: AnimationDefinition
+  }
+
+  export interface BadgeProps {
+    children?: JSX.Element | string | number
+    style?: StyleProp<ViewStyle>
+    textStyle?: StyleProp<TextStyle>
+  }
+
+  export default class BottomNavigation extends React.Component<
     BottomNavigationProps
   > {}
-  export class Tab extends React.Component<TabProps> {}
-  export default BottomNavigation
+  export class IconTab extends React.Component<IconTabProps> {}
+  export class FullTab extends React.Component<FullTabProps> {}
+  export class ShiftingTab extends React.Component<FullTabProps> {}
+  export class Badge extends React.Component<BadgeProps> {}
 }

@@ -1,0 +1,71 @@
+version: 2
+
+defaults: &defaults
+  docker:
+    - image: circleci/node:9.4
+  working_directory: ~/project
+
+jobs:
+  install_dependencies:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-react-native-mbn-{{ checksum "package.json" }}
+            - v1-react-native-mbn-
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Install Code Climate Reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - save_cache:
+          key: v1-react-native-mbn-{{ checksum "package.json" }}
+          paths: node_modules
+      - persist_to_workspace:
+          root: .
+          paths: .
+
+  lint:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: npm run lint
+
+  unit_test:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Unit Tests with Coverage
+          command: |
+            ./cc-test-reporter before-build
+            npm test
+            ./cc-test-reporter after-build --exit-code $?
+          environment:
+            JEST_JUNIT_OUTPUT: "coverage/junit/js-test-results.xml"
+      - store_test_results:
+          path: coverage/junit
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+
+workflows:
+  version: 2
+  ci_test:
+    jobs:
+      - install_dependencies
+      - lint:
+          requires:
+            - install_dependencies
+      - unit_test:
+          requires:
+            - install_dependencies

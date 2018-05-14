@@ -1,22 +1,71 @@
 {
   "name": "react-native-material-bottom-navigation",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "A highly accurate JS Implementation of the Material Design Bottom Navigation Component for react-native",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "flow-typed/",
+    "lib/",
+    "docs/"
+  ],
   "scripts": {
+    "docs:gen:api": "./scripts/docgen",
+    "test": "./scripts/test",
+    "test:watch": "jest --watch --env=jsdom",
+    "test:ci": "export JEST_JUNIT_OUTPUT=\"coverage/junit/js-test-results.xml\" && jest --env=jsdom --runInBand --ci --coverage --testResultsProcessor=\"jest-junit\"",
     "lint": "eslint ."
   },
-  "main": "index.js",
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/timomeh/react-native-material-bottom-navigation.git"
+    "url": "git+https://github.com/timomeh/react-native-material-bottom-navigation.git"
   },
   "bugs": {
-    "url":
-      "https://github.com/timomeh/react-native-material-bottom-navigation/issues"
+    "url": "https://github.com/timomeh/react-native-material-bottom-navigation/issues"
   },
   "author": "Timo Mämecke <maemecketimo@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react-native": "^3.2.1",
+    "jest": "22.4.0",
+    "jest-junit": "^3.6.0",
+    "prettier": "^1.10.2",
+    "react": "^16.2.0",
+    "react-docgen": "^2.20.1",
+    "react-docgen-markdown-renderer": "^1.0.2",
+    "react-dom": "^16.2.0",
+    "react-native": "^0.54.2",
+    "react-native-mock": "^0.3.1",
+    "react-native-mock-render": "0.0.22",
+    "react-test-renderer": "~15.4.0"
+  },
+  "types": "./index.d.ts",
+  "jest": {
+    "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/setupTests.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/examples/Playground/node_modules"
+    ]
+  },
   "keywords": [
     "react-native",
     "material",
@@ -26,22 +75,5 @@
     "android",
     "react-component",
     "react-navigation"
-  ],
-  "types": "./index.d.ts",
-  "devDependencies": {
-    "babel-eslint": "^8.2.2",
-    "babel-jest": "18.0.0",
-    "babel-preset-react-native": "1.9.1",
-    "eslint": "^4.18.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-react-native": "^3.2.1",
-    "jest": "18.1.0",
-    "prettier": "^1.10.2",
-    "react-test-renderer": "~15.4.0"
-  },
-  "jest": {
-    "preset": "react-native"
-  }
+  ]
 }

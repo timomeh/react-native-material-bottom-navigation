@@ -1,0 +1,23 @@
+{
+  "name": "Playground",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "glob-to-regexp": "^0.4.0",
+    "react-native-scripts": "1.11.1",
+    "react-test-renderer": "16.2.0"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
+    "expo": "^25.0.0",
+    "react": "16.2.0",
+    "react-native": "0.52.0"
+  }
+}
