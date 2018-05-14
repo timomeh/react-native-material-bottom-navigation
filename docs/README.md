@@ -1,8 +1,10 @@
-# Table of contents
+# Table of Contents
 
-* [Material Design Bottom Navigation for react-native](../README.md)
-* [LICENSE](../license.md)
-* .github
-  * [ISSUE\_TEMPLATE](../.github/issue_template.md)
-* [Contributor Covenant Code of Conduct](../code_of_conduct.md)
-
+* [Introduction](../README.md)
+* [Usage](Usage.md)
+* [API Reference](api/README.md)
+  * [Badge](api/Badge.md)
+  * [BottomNavigation](api/BottomNavigation.md)
+  * [FullTab](api/FullTab.md)
+  * [IconTab](api/IconTab.md)
+  * [ShiftingTab](api/ShiftingTab.md)
