@@ -1,7 +1,7 @@
 {
   "name": "react-native-material-bottom-navigation",
   "version": "1.0.0",
-  "description": "A highly accurate JS Implementation of the Material Design Bottom Navigation Component for react-native",
+  "description": "A beautiful, customizable and easy-to-use Material Design Bottom Navigation for react-native.",
   "main": "index.js",
   "files": [
     "index.js",
