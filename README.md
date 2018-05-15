@@ -152,7 +152,7 @@ You can also view the entire documentation on GitBook: https://timomeh.gitbook.i
 
 In contrary to earlier releases, this library _does not support_ React Navigation out of the box (called `NavigationComponent` in earlier releases). React Navigation now ships with an own Material Bottom Navigation: [`createMaterialBottomTabNavigator`](https://reactnavigation.org/docs/en/material-bottom-tab-navigator.html).
 
-The API of React Navigation changes quite frequently, and (until now) it wasn't always easy keep track of changes and be up-to-date. Also I don't want to favor and promote React Navigation over other Navigation Libraries.
+The API of React Navigation changes quite frequently, and (until now) it wasn't always easy to keep track of changes and be up-to-date. Also I don't want to favor and promote React Navigation over other Navigation Libraries.
 
 You can still implement the Bottom Navigation on your own, for example by using React Navigation's [Custom Navigator](https://reactnavigation.org/docs/en/custom-navigator-overview.html).
 
