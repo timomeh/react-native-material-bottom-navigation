@@ -75,7 +75,9 @@ This library uses ["render props"](https://reactjs.org/docs/render-props.html) a
 Dive into the example below, check out [the example app](/examples/Playground) and take a look at the [Usage Documentation](https://timomeh.gitbook.io/material-bottom-navigation/usage).
 
 ```js
-import BottomNavigation, { FullTab } from 'react-native-material-bottom-navigation'
+import BottomNavigation, {
+  FullTab
+} from 'react-native-material-bottom-navigation'
 
 export default class App extends React.Component {
   tabs = [
@@ -122,7 +124,7 @@ export default class App extends React.Component {
           {/* Your screen contents depending on current tab. */}
         </View>
         <BottomNavigation
-          onTabPress={activeTab => this.setState({ activeTab })}
+          onTabPress={newTab => this.setState({ activeTab: newTab.key })}
           renderTab={this.renderTab}
           tabs={this.tabs}
         />

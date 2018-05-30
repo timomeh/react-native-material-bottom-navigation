@@ -152,7 +152,7 @@ Instead of a [`FullTab`](./api/FullTab.md), you can also use:
 
 The Icon can be any Component you want to use, for example [@expo/vector-icons](https://github.com/expo/vector-icons). In fact, the Material Bottom Navigation doesn't include an own Icon Component.
 
-As you see above, the `renderIcon` prop only contains an object as argument with the `isActive` key. We pass more arguments to `renderIcon` using something called a _Thunk_: a function returning a function. This sounds complicated, but are just two small changes:
+As you see above, the `renderIcon` prop only contains an object as argument with the `isActive` key. We pass more arguments to `renderIcon` using something called a _Thunk_ (or _Curry_, _Higher-order Function_, _Closure_): a function returning a function. This sounds complicated, but are just two small changes:
 
 ```js
 // ...
@@ -218,7 +218,7 @@ Check out the API Documentations of the different Tabs and for the [`Badge`](./a
 To use the Bottom Navigation as [Controlled Component](https://reactjs.org/docs/forms.html#controlled-components), you can use two additional props:
 
 * `activeTab`: the key of the currently active tab.
-* `onTabPress`: event handler when a Tab is being pressed, called with the key of the new and old tab as parameter.
+* `onTabPress`: event handler when a Tab is being pressed. Parameters are the tab object of the new and old tab.
 
 ```js
 import BottomNavigation from 'react-native-material-bottom-navigation'
@@ -229,7 +229,7 @@ export default class App extends React.Component {
   }
 
   handleTabPress = (newTab, oldTab) => {
-    this.setState({ activeTab: newTab })
+    this.setState({ activeTab: newTab.key })
   }
 
   render() {

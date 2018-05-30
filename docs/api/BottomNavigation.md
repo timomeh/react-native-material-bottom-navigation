@@ -20,6 +20,7 @@ component by using the prop `activeTab`. If you set `activeTab`, the
 BottomNavigation will switch to controlled mode. If a tab is pressed, it
 will only become active if you update the value for `activeTab`.
 You receive tab presses through the prop `onTabPress={(newTab) => ...}`.
+`newTab` is the tab object, you can get its key with `newTab.key`.
 See also: https://reactjs.org/docs/forms.html#controlled-components
 
 If you use it as an uncontrolled component, the tab will automatically
@@ -42,7 +43,9 @@ Bottom navigation will become a controlled component.
 Type: `Function`
 
 The called function when a tab was pressed. Useful to change the active
-tab when you use the Bottom navigation as controlled component.
+tab when you use the Bottom navigation as controlled component. Has
+the tab object of the pressed tab and the currently active tab as
+as parameters.
 Arguments: `(newTab, oldTab)`
 
 

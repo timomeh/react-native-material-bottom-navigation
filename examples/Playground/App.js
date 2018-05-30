@@ -7,6 +7,10 @@ import BottomNavigation, {
 import Icon from '@expo/vector-icons/MaterialCommunityIcons'
 
 export default class App extends React.Component {
+  state = {
+    activeTab: 'games'
+  }
+
   tabs = [
     {
       key: 'games',
@@ -72,10 +76,11 @@ export default class App extends React.Component {
           />
         </View>
         <BottomNavigation
-          onTabPress={activeTab => this.setState({ activeTab })}
+          tabs={this.tabs}
+          activeTab={this.state.activeTab}
+          onTabPress={newTab => this.setState({ activeTab: newTab.key })}
           renderTab={this.renderTab}
           useLayoutAnimation
-          tabs={this.tabs}
         />
       </View>
     )
