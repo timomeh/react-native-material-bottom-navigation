@@ -48,10 +48,10 @@ jobs:
           name: Unit Tests with Coverage
           command: |
             ./cc-test-reporter before-build
-            npm test
+            npm run test:ci
             ./cc-test-reporter after-build --exit-code $?
           environment:
-            JEST_JUNIT_OUTPUT: "coverage/junit/js-test-results.xml"
+            JEST_JUNIT_OUTPUT: 'coverage/junit/js-test-results.xml'
       - store_test_results:
           path: coverage/junit
       - store_artifacts:

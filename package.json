@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "docs:gen:api": "./scripts/docgen",
-    "test": "./scripts/test",
+    "test": "jest",
     "test:watch": "jest --watch --env=jsdom",
     "test:ci": "export JEST_JUNIT_OUTPUT=\"coverage/junit/js-test-results.xml\" && jest --env=jsdom --runInBand --ci --coverage --testResultsProcessor=\"jest-junit\"",
     "lint": "eslint ."

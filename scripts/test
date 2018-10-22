@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-
-const { execSync } = require('child_process')
-
-if (process.env.CI) {
-  execSync('npm run test:ci', { stdio: 'inherit' })
-} else {
-  execSync('npm run test:watch', { stdio: 'inherit' })
-}
