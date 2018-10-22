@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "docs:gen:api": "./scripts/docgen",
-    "test": "jest",
+    "test": "jest --all --env=jsdom",
     "test:watch": "jest --watch --env=jsdom",
     "test:ci": "export JEST_JUNIT_OUTPUT=\"coverage/junit/js-test-results.xml\" && jest --env=jsdom --runInBand --ci --coverage --testResultsProcessor=\"jest-junit\"",
     "lint": "eslint ."
@@ -63,6 +63,9 @@
     "setupFiles": [
       "<rootDir>/setupTests.js"
     ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
     "modulePathIgnorePatterns": [
       "<rootDir>/examples/Playground/node_modules"
     ]
