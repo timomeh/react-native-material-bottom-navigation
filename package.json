@@ -15,7 +15,10 @@
     "test": "jest --all --env=jsdom",
     "test:watch": "jest --watch --env=jsdom",
     "test:ci": "export JEST_JUNIT_OUTPUT=\"coverage/junit/js-test-results.xml\" && jest --env=jsdom --runInBand --ci --coverage --testResultsProcessor=\"jest-junit\"",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "contributors:check": "all-contributors check"
   },
   "repository": {
     "type": "git",
@@ -34,6 +37,7 @@
     "react-native": "*"
   },
   "devDependencies": {
+    "all-contributors-cli": "^5.4.1",
     "babel-eslint": "^8.2.2",
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",

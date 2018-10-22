@@ -1,0 +1,110 @@
+{
+  "projectName": "react-native-material-bottom-navigation",
+  "projectOwner": "timomeh",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "timomeh",
+      "name": "Timo Mämecke",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4227520?v=4",
+      "profile": "https://twitter.com/timomeh",
+      "contributions": [
+        "bug",
+        "code",
+        "design",
+        "doc",
+        "example",
+        "infra",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "ShayanJavadi",
+      "name": "Shayan Javadi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11575429?v=4",
+      "profile": "https://www.shayanjavadi.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "davidmpr",
+      "name": "David",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14214500?v=4",
+      "profile": "https://github.com/davidmpr",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jayserdny",
+      "name": "Jayser Mendez",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/19354816?v=4",
+      "profile": "http://steemia.io",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "PeterKottas",
+      "name": "Peter Kottas",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10601911?v=4",
+      "profile": "https://www.facebook.com/tipsforholiday",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "matt-oakes",
+      "name": "Matt Oakes",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/97068?v=4",
+      "profile": "https://mattoakes.net",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "keeleycarrigan",
+      "name": "Keeley Carrigan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1533112?v=4",
+      "profile": "http://www.keeleycarrigan.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "wildseansy",
+      "name": "Sean Holbert",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/177857?v=4",
+      "profile": "http://www.twitter.com/wildseansy",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "aparolin",
+      "name": "Alessandro Parolin",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9802139?v=4",
+      "profile": "https://github.com/aparolin",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "prashantham",
+      "name": "Prashanth Acharya M",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1837764?v=4",
+      "profile": "https://github.com/prashantham",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ]
+}

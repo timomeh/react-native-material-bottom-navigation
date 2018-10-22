@@ -18,11 +18,11 @@
 
 <br />
 
-* **Pure JavaScript.** No native dependencies. No linking. No obstacles.
-* **Looks beautiful.** Stunning and fluid animations. You won't believe it's not a native view.
-* **Customize it.** You can adjust nearly everything to make it fit perfectly to your app.
-* **Easy to use.** Uses established React patterns for both simple and advanced usage.
-* **Pluggable.** Includes customizable Tabs and Badges. Not enough? Create and use your own!
+- **Pure JavaScript.** No native dependencies. No linking. No obstacles.
+- **Looks beautiful.** Stunning and fluid animations. You won't believe it's not a native view.
+- **Customize it.** You can adjust nearly everything to make it fit perfectly to your app.
+- **Easy to use.** Uses established React patterns for both simple and advanced usage.
+- **Pluggable.** Includes customizable Tabs and Badges. Not enough? Create and use your own!
 
 <br />
 
@@ -42,14 +42,14 @@ yarn add react-native-material-bottom-navigation
 
 ## Table of Contents
 
-* [Installation](#installation)
-* [Demo](#demo)
-* [Usage](#usage)
-* [Documentation](#documentation)
-* [Notes](#notes)
-* [Contribute](#contribute)
-* [Authors](#authors)
-* [License](#license)
+- [Installation](#installation)
+- [Demo](#demo)
+- [Usage](#usage)
+- [Documentation](#documentation)
+- [Notes](#notes)
+- [Contribute](#contribute)
+- [Contributors](#contributors)
+- [License](#license)
 
 ## Demo
 
@@ -140,13 +140,13 @@ export default class App extends React.Component {
 
 You can also view the entire documentation on GitBook: https://timomeh.gitbook.io/material-bottom-navigation/
 
-* [Usage](/docs/Usage.md)
-* [API Reference](/docs/api)
-  * [`<Badge />`](/docs/api/Badge.md)
-  * [`<BottomNavigation />`](/docs/api/BottomNavigation.md)
-  * [`<FullTab />`](/docs/api/FullTab.md)
-  * [`<IconTab />`](/docs/api/IconTab.md)
-  * [`<ShiftingTab />`](/docs/api/ShiftingTab.md)
+- [Usage](/docs/Usage.md)
+- [API Reference](/docs/api)
+  - [`<Badge />`](/docs/api/Badge.md)
+  - [`<BottomNavigation />`](/docs/api/BottomNavigation.md)
+  - [`<FullTab />`](/docs/api/FullTab.md)
+  - [`<IconTab />`](/docs/api/IconTab.md)
+  - [`<ShiftingTab />`](/docs/api/ShiftingTab.md)
 
 ## Notes
 
@@ -170,15 +170,18 @@ Contributions are always welcome. Read more in the [Contribution Guides](CONTRIB
 
 Please note that this project is released with a Contributor [Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-## Authors
+## Contributors
 
-**Author**
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
-* Timo Mämecke ([GitHub](https://github.com/timomeh), [Twitter](https://twitter.com/timomeh))
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars3.githubusercontent.com/u/4227520?v=4" width="100px;"/><br /><sub><b>Timo Mämecke</b></sub>](https://twitter.com/timomeh)<br />[🐛](https://github.com/timomeh/react-native-material-bottom-navigation/issues?q=author%3Atimomeh "Bug reports") [💻](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=timomeh "Code") [🎨](#design-timomeh "Design") [📖](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=timomeh "Documentation") [💡](#example-timomeh "Examples") [🚇](#infra-timomeh "Infrastructure (Hosting, Build-Tools, etc)") [🤔](#ideas-timomeh "Ideas, Planning, & Feedback") [👀](#review-timomeh "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/11575429?v=4" width="100px;"/><br /><sub><b>Shayan Javadi</b></sub>](https://www.shayanjavadi.com/)<br />[💻](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=ShayanJavadi "Code") | [<img src="https://avatars2.githubusercontent.com/u/14214500?v=4" width="100px;"/><br /><sub><b>David</b></sub>](https://github.com/davidmpr)<br />[💻](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=davidmpr "Code") | [<img src="https://avatars2.githubusercontent.com/u/19354816?v=4" width="100px;"/><br /><sub><b>Jayser Mendez</b></sub>](http://steemia.io)<br />[📖](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=jayserdny "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/10601911?v=4" width="100px;"/><br /><sub><b>Peter Kottas</b></sub>](https://www.facebook.com/tipsforholiday)<br />[💻](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=PeterKottas "Code") | [<img src="https://avatars0.githubusercontent.com/u/97068?v=4" width="100px;"/><br /><sub><b>Matt Oakes</b></sub>](https://mattoakes.net)<br />[💻](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=matt-oakes "Code") | [<img src="https://avatars0.githubusercontent.com/u/1533112?v=4" width="100px;"/><br /><sub><b>Keeley Carrigan</b></sub>](http://www.keeleycarrigan.com)<br />[💻](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=keeleycarrigan "Code") |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars1.githubusercontent.com/u/177857?v=4" width="100px;"/><br /><sub><b>Sean Holbert</b></sub>](http://www.twitter.com/wildseansy)<br />[💻](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=wildseansy "Code") | [<img src="https://avatars0.githubusercontent.com/u/9802139?v=4" width="100px;"/><br /><sub><b>Alessandro Parolin</b></sub>](https://github.com/aparolin)<br />[📖](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=aparolin "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/1837764?v=4" width="100px;"/><br /><sub><b>Prashanth Acharya M</b></sub>](https://github.com/prashantham)<br />[📖](https://github.com/timomeh/react-native-material-bottom-navigation/commits?author=prashantham "Documentation") |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-**Contributors**
-
-See [Contributors List](https://github.com/timomeh/react-native-material-bottom-navigation/contributors). Thanks to everyone!
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
 
 ## License
 
