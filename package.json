@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-bottom-navigation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A beautiful, customizable and easy-to-use Material Design Bottom Navigation for react-native.",
   "main": "index.js",
   "files": [
