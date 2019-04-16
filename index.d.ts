@@ -12,7 +12,7 @@ declare module 'react-native-material-bottom-navigation' {
 
   export interface BottomNavigationProps {
     tabs: { [index: number]: TabConfig }
-    renderTab: ({ isActive: boolean }) => JSX.Element
+    renderTab: ({ tab: TabConfig, isActive: boolean }) => JSX.Element
     activeTab?: number | string
     onTabPress?: (newTab: TabConfig, oldTab: TabConfig) => void
     useLayoutAnimation?: boolean
