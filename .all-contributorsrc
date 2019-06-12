@@ -114,6 +114,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "trevor-atlas",
+      "name": "Trevor Atlas",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5009188?v=4",
+      "profile": "https://blog.trevoratlas.com/",
+      "contributions": [
+        "bug"
+      ]
     }
   ]
 }
