@@ -1,3 +1,4 @@
+import React from 'react'
 import { ViewStyle, TextStyle, StyleProp, Animated } from 'react-native'
 
 declare module 'react-native-material-bottom-navigation' {
