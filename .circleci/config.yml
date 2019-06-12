@@ -4,6 +4,8 @@ defaults: &defaults
   docker:
     - image: circleci/node:9.4
   working_directory: ~/project
+  environment:
+    CC_TEST_REPORTER_ID: 8c2520b4bcc18770be1ec6683f28035713007dfe505f7418b2f41a8e053ab6ea
 
 jobs:
   install_dependencies:
