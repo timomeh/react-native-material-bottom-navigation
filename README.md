@@ -28,16 +28,8 @@
 
 ## Installation
 
-Using [npm](https://www.npmjs.com/):
-
 ```sh
 npm install react-native-material-bottom-navigation
-```
-
-Or using [yarn](https://yarnpkg.com):
-
-```sh
-yarn add react-native-material-bottom-navigation
 ```
 
 ## Table of Contents
