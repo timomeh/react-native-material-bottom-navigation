@@ -135,8 +135,6 @@ export default class App extends React.Component {
 
 ## Documentation
 
-You can also view the entire documentation on GitBook: https://timomeh.gitbook.io/material-bottom-navigation/
-
 - [Usage](/docs/Usage.md)
 - [API Reference](/docs/api)
   - [`<Badge />`](/docs/api/Badge.md)
