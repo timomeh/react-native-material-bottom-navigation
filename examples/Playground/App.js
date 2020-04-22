@@ -7,9 +7,6 @@ import BottomNavigation, {
 import Icon from '@expo/vector-icons/MaterialCommunityIcons'
 
 export default class App extends React.Component {
-  state = {
-    activeTab: 'games'
-  }
 
   tabs = [
     {
